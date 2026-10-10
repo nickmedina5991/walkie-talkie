@@ -1,0 +1,76 @@
+menu "Walkie Talkie"
+
+    choice WT_APP_MODE
+        prompt "App mode"
+        default WT_MODE_HWTEST
+        help
+            Pick what the firmware does. Bring the hardware up in this order:
+            hardware test, audio loopback, radio range test, walkie talkie.
+
+        config WT_MODE_HWTEST
+            bool "1. Hardware test (OLED, buttons, encoder, battery, mic meter, beeps)"
+        config WT_MODE_LOOPBACK
+            bool "2. Audio loopback (mic -> ADPCM -> speaker, simulated packet loss)"
+        config WT_MODE_RADIOTEST
+            bool "3. Radio range test (two bare Feathers are enough)"
+        config WT_MODE_WALKIE
+            bool "4. Walkie talkie"
+    endchoice
+
+    config WT_DEFAULT_CHANNEL
+        int "Default talk channel (1-8)"
+        range 1 8
+        default 1
+        help
+            Used until a channel is saved from the menu.
+
+    config WT_WIFI_CHANNEL
+        int "Wi-Fi channel"
+        range 1 13
+        default 1
+        help
+            Every unit must use the same Wi-Fi channel. Pick a quiet one
+            (1, 6 or 11 are common) if the lab Wi-Fi is busy.
+
+    config WT_LONG_RANGE
+        bool "Start in Long Range (LR) mode"
+        default n
+
+    config WT_PASSPHRASE
+        string "Channel key passphrase"
+        default "change-me"
+        help
+            Both units must use the same passphrase. Each talk channel gets its
+            own AES-128 key derived from it.
+
+    config WT_MIC_SHIFT
+        int "Mic sample right shift (smaller = louder)"
+        range 8 18
+        default 14
+        help
+            The INMP441 gives 24 bit samples in 32 bit slots. 16 gives quiet
+            audio, 14 is a good start, 12 is loud and may clip.
+
+    config WT_MIC_RIGHT_SLOT
+        bool "Mic is on the right I2S slot"
+        default n
+        help
+            Turn on if the mic level stays at zero with L/R tied to GND, or if
+            you tied L/R to 3V.
+
+    config WT_OLED_ADDR
+        hex "OLED I2C address"
+        default 0x3C
+        help
+            Most SSD1306 boards are 0x3C. Some are 0x3D (check the back of the board).
+
+    config WT_TIMING_PINS
+        bool "Drive timing marker pins (GPIO7 capture, GPIO14 playback, GPIO15 encode)"
+        default y
+
+    config WT_JITTER_PREFILL
+        int "Jitter buffer prefill (frames of 20 ms)"
+        range 1 6
+        default 3
+
+endmenu
