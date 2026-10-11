@@ -1,0 +1,19 @@
+# ESP-IDF build output (build_mode makes one folder per mode)
+build/
+build_*/
+sdkconfig
+sdkconfig.old
+managed_components/
+
+# Host test binaries
+host_tests/run_tests
+host_tests/adpcm_wav
+host_tests/*.o
+host_tests/*.exe
+
+# Editors and OS files
+.vscode/
+.pio/
+__pycache__/
+.DS_Store
+Thumbs.db
