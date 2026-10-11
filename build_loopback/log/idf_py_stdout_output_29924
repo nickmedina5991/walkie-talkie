@@ -1,0 +1,1815 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x3 (DOWNLOA�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 271414342, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6280
+load:0x40078000,len:15736
+load:0x40080400,len:4
+load:0x40080404,len:3920
+entry 0x40080648
+[0;32mI (30) boot: ESP-IDF v5.4.4 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Oct 11 2026 01:05:23[0m
+[0;32mI (30) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 8MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0cecch ( 52940) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001cef4 vaddr=3ffb0000 size=0286ch ( 10348) load[0m
+[0;32mI (111) esp_image: segment 2: paddr=0001f768 vaddr=40080000 size=008b0h (  2224) load[0m
+[0;32mI (112) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1c2e8h (115432) map[0m
+[0;32mI (158) esp_image: segment 4: paddr=0003c310 vaddr=400808b0 size=0d6b4h ( 54964) load[0m
+[0;32mI (179) esp_image: segment 5: paddr=000499cc vaddr=50000000 size=0001ch (    28) load[0m
+[0;32mI (186) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (186) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (206) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (206) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (208) app_init: Application information:[0m
+[0;32mI (211) app_init: Project name:     walkie_talkie[0m
+[0;32mI (216) app_init: App version:      a8d2dee-dirty[0m
+[0;32mI (220) app_init: Compile time:     Oct 11 2026 01:04:46[0m
+[0;32mI (225) app_init: ELF file SHA256:  2f4608caf...[0m
+[0;32mI (230) app_init: ESP-IDF:          v5.4.4[0m
+[0;32mI (234) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (237) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (241) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (245) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (252) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (257) heap_init: At 3FFB4130 len 0002BED0 (175 KiB): DRAM[0m
+[0;32mI (262) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (273) heap_init: At 4008DF64 len 0001209C (72 KiB): IRAM[0m
+[0;32mI (279) spi_flash: detected chip: generic[0m
+[0;32mI (282) spi_flash: flash io: dio[0m
+[0;32mI (285) main_task: Started on CPU0[0m
+[0;32mI (288) main_task: Calling app_main()[0m
+[0;32mI (301) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (302) gpio: GPIO[13]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (309) gpio: GPIO[7]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (317) gpio: GPIO[14]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (326) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (334) main: mode: audio loopback[0m
+[0;32mI (364) oled: SSD1306 ready at 0x3C[0m
+[0;32mI (365) gpio: GPIO[4]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (365) gpio: GPIO[21]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (374) input: PTT on GPIO4, encoder A/B/SW on GPIO5/19/21[0m
+[0;32mI (380) gpio: GPIO[8]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (387) audio: I2S ready: mic on I2S0, amp on I2S1, 16000 Hz, 320 sample frames[0m
+[0;32mI (394) loopback: Hold PTT and talk. Keep the speaker away from the mic or turn the volume down.[0m
+frames=0 dropped=0 concealed=0 q_full=0 enc=0us dec=0us peak=326 vol=5 loss=0%
+frames=0 dropped=0 concealed=0 q_full=0 enc=0us dec=0us peak=693 vol=5 loss=0%
+frames=0 dropped=0 concealed=0 q_full=0 enc=0us dec=0us peak=371 vol=5 loss=0%
+frames=0 dropped=0 concealed=0 q_full=0 enc=0us dec=0us peak=287 vol=5 loss=0%
+frames=0 dropped=0 concealed=0 q_full=0 enc=0us dec=0us peak=2567 vol=5 loss=0%
+frames=0 dropped=0 concealed=0 q_full=0 enc=0us dec=0us peak=868 vol=5 loss=0%
+frames=0 dropped=0 concealed=0 q_full=0 enc=0us dec=0us peak=315 vol=5 loss=0%
+frames=0 dropped=0 concealed=0 q_full=0 enc=0us dec=0us peak=728 vol=5 loss=0%
+frames=0 dropped=0 concealed=0 q_full=0 enc=0us dec=0us peak=574 vol=5 loss=0%
+frames=0 dropped=0 concealed=0 q_full=0 enc=0us dec=0us peak=402 vol=5 loss=0%
+[0;32mI (11203) loopback: simulated loss 5%[0m
+frames=0 dropped=0 concealed=0 q_full=0 enc=0us dec=0us peak=347 vol=5 loss=5%
+frames=1 dropped=0 concealed=0 q_full=0 enc=163us dec=107us peak=9141 vol=5 loss=5%
+frames=54 dropped=2 concealed=2 q_full=0 enc=91us dec=64us peak=10919 vol=5 loss=5%
+frames=106 dropped=4 concealed=4 q_full=0 enc=92us dec=64us peak=6428 vol=5 loss=5%
+frames=159 dropped=8 concealed=8 q_full=0 enc=91us dec=63us peak=28672 vol=5 loss=5%
+frames=211 dropped=12 concealed=12 q_full=0 enc=92us dec=63us peak=4010 vol=5 loss=5%
+frames=264 dropped=13 concealed=13 q_full=0 enc=92us dec=63us peak=2911 vol=5 loss=5%
+frames=300 dropped=15 concealed=15 q_full=0 enc=92us dec=63us peak=3172 vol=5 loss=5%
+frames=337 dropped=15 concealed=15 q_full=0 enc=92us dec=63us peak=795 vol=5 loss=5%
+frames=337 dropped=15 concealed=15 q_full=0 enc=92us dec=63us peak=2530 vol=5 loss=5%
+frames=337 dropped=15 concealed=15 q_full=0 enc=92us dec=63us peak=455 vol=1 loss=5%
+frames=337 dropped=15 concealed=15 q_full=0 enc=92us dec=63us peak=477 vol=0 loss=5%
+frames=337 dropped=15 concealed=15 q_full=0 enc=92us dec=63us peak=1322 vol=0 loss=5%
+frames=386 dropped=16 concealed=16 q_full=0 enc=92us dec=63us peak=303 vol=0 loss=5%
+frames=439 dropped=17 concealed=17 q_full=0 enc=92us dec=63us peak=302 vol=0 loss=5%
+frames=491 dropped=23 concealed=23 q_full=0 enc=92us dec=64us peak=609 vol=2 loss=5%
+frames=544 dropped=24 concealed=24 q_full=0 enc=92us dec=63us peak=3544 vol=9 loss=5%
+frames=596 dropped=27 concealed=27 q_full=0 enc=92us dec=63us peak=2759 vol=10 loss=5%
+frames=649 dropped=30 concealed=30 q_full=0 enc=92us dec=63us peak=2058 vol=10 loss=5%
+frames=701 dropped=32 concealed=32 q_full=0 enc=92us dec=64us peak=2469 vol=8 loss=5%
+frames=754 dropped=34 concealed=34 q_full=0 enc=91us dec=64us peak=6484 vol=6 loss=5%
+frames=806 dropped=37 concealed=37 q_full=0 enc=92us dec=63us peak=250 vol=2 loss=5%
+frames=859 dropped=40 concealed=40 q_full=0 enc=92us dec=63us peak=299 vol=3 loss=5%
+frames=911 dropped=41 concealed=41 q_full=0 enc=92us dec=63us peak=18738 vol=2 loss=5%
+frames=964 dropped=42 concealed=42 q_full=0 enc=92us dec=63us peak=814 vol=2 loss=5%
+frames=1016 dropped=45 concealed=45 q_full=0 enc=92us dec=63us peak=240 vol=2 loss=5%
+frames=1069 dropped=46 concealed=46 q_full=0 enc=92us dec=63us peak=7014 vol=2 loss=5%
+frames=1121 dropped=47 concealed=47 q_full=0 enc=92us dec=63us peak=1792 vol=2 loss=5%
+frames=1174 dropped=51 concealed=51 q_full=0 enc=92us dec=63us peak=2134 vol=2 loss=5%
+frames=1226 dropped=53 concealed=53 q_full=0 enc=91us dec=64us peak=28672 vol=2 loss=5%
+frames=1279 dropped=59 concealed=59 q_full=0 enc=91us dec=63us peak=28671 vol=2 loss=5%
+frames=1331 dropped=62 concealed=62 q_full=0 enc=92us dec=63us peak=1400 vol=2 loss=5%
+frames=1384 dropped=63 concealed=63 q_full=0 enc=92us dec=63us peak=1345 vol=2 loss=5%
+frames=1436 dropped=67 concealed=67 q_full=0 enc=92us dec=63us peak=11881 vol=2 loss=5%
+frames=1489 dropped=69 concealed=69 q_full=0 enc=92us dec=63us peak=32768 vol=2 loss=5%
+frames=1541 dropped=69 concealed=69 q_full=0 enc=92us dec=63us peak=946 vol=2 loss=5%
+frames=1594 dropped=74 concealed=74 q_full=0 enc=92us dec=63us peak=470 vol=2 loss=5%
+frames=1646 dropped=76 concealed=76 q_full=0 enc=92us dec=63us peak=8136 vol=1 loss=5%
+frames=1699 dropped=78 concealed=78 q_full=0 enc=92us dec=63us peak=10348 vol=1 loss=5%
+frames=1751 dropped=81 concealed=81 q_full=0 enc=92us dec=63us peak=19208 vol=1 loss=5%
+frames=1804 dropped=87 concealed=87 q_full=0 enc=91us dec=64us peak=1379 vol=1 loss=5%
+frames=1856 dropped=90 concealed=90 q_full=0 enc=92us dec=64us peak=565 vol=1 loss=5%
+frames=1909 dropped=93 concealed=93 q_full=0 enc=92us dec=63us peak=714 vol=3 loss=5%
+frames=1961 dropped=95 concealed=95 q_full=0 enc=92us dec=63us peak=4000 vol=3 loss=5%
+frames=2014 dropped=100 concealed=100 q_full=0 enc=91us dec=64us peak=1045 vol=3 loss=5%
+frames=2066 dropped=103 concealed=103 q_full=0 enc=92us dec=63us peak=3229 vol=3 loss=5%
+frames=2119 dropped=107 concealed=107 q_full=0 enc=91us dec=64us peak=648 vol=2 loss=5%
+frames=2171 dropped=107 concealed=107 q_full=0 enc=92us dec=63us peak=436 vol=2 loss=5%
+frames=2224 dropped=108 concealed=108 q_full=0 enc=91us dec=63us peak=10445 vol=2 loss=5%
+frames=2276 dropped=110 concealed=110 q_full=0 enc=91us dec=63us peak=32768 vol=2 loss=5%
+frames=2329 dropped=112 concealed=112 q_full=0 enc=92us dec=63us peak=8416 vol=2 loss=5%
+frames=2381 dropped=113 concealed=113 q_full=0 enc=91us dec=64us peak=1708 vol=2 loss=5%
+frames=2434 dropped=118 concealed=118 q_full=0 enc=92us dec=63us peak=8033 vol=2 loss=5%
+frames=2486 dropped=122 concealed=122 q_full=0 enc=92us dec=63us peak=2303 vol=2 loss=5%
+frames=2539 dropped=123 concealed=123 q_full=0 enc=92us dec=63us peak=931 vol=2 loss=5%
+frames=2591 dropped=125 concealed=125 q_full=0 enc=91us dec=64us peak=586 vol=2 loss=5%
+frames=2644 dropped=128 concealed=128 q_full=0 enc=92us dec=63us peak=26736 vol=2 loss=5%
+frames=2696 dropped=131 concealed=131 q_full=0 enc=91us dec=64us peak=28672 vol=2 loss=5%
+frames=2749 dropped=133 concealed=133 q_full=0 enc=92us dec=63us peak=32768 vol=2 loss=5%
+frames=2801 dropped=135 concealed=135 q_full=0 enc=92us dec=63us peak=15838 vol=2 loss=5%
+frames=2854 dropped=137 concealed=137 q_full=0 enc=92us dec=63us peak=1222 vol=2 loss=5%
+frames=2906 dropped=140 concealed=140 q_full=0 enc=92us dec=63us peak=28671 vol=2 loss=5%
+frames=2959 dropped=141 concealed=141 q_full=0 enc=91us dec=63us peak=32768 vol=2 loss=5%
+frames=3011 dropped=145 concealed=145 q_full=0 enc=92us dec=63us peak=18175 vol=2 loss=5%
+frames=3064 dropped=145 concealed=145 q_full=0 enc=92us dec=63us peak=651 vol=2 loss=5%
+frames=3116 dropped=148 concealed=148 q_full=0 enc=92us dec=63us peak=6275 vol=2 loss=5%
+frames=3169 dropped=150 concealed=150 q_full=0 enc=92us dec=63us peak=4512 vol=5 loss=5%
+frames=3221 dropped=152 concealed=152 q_full=0 enc=92us dec=63us peak=866 vol=10 loss=5%
+frames=3274 dropped=155 concealed=155 q_full=0 enc=92us dec=63us peak=2804 vol=10 loss=5%
+frames=3326 dropped=158 concealed=158 q_full=0 enc=91us dec=64us peak=4900 vol=8 loss=5%
+frames=3379 dropped=159 concealed=159 q_full=0 enc=92us dec=63us peak=1076 vol=4 loss=5%
+frames=3431 dropped=160 concealed=160 q_full=0 enc=92us dec=63us peak=854 vol=2 loss=5%
+frames=3484 dropped=166 concealed=166 q_full=0 enc=92us dec=63us peak=2251 vol=9 loss=5%
+frames=3536 dropped=169 concealed=169 q_full=0 enc=92us dec=64us peak=3466 vol=10 loss=5%
+frames=3589 dropped=174 concealed=174 q_full=0 enc=91us dec=63us peak=2114 vol=10 loss=5%
+frames=3641 dropped=175 concealed=175 q_full=0 enc=92us dec=64us peak=2953 vol=8 loss=5%
+frames=3694 dropped=177 concealed=177 q_full=0 enc=92us dec=63us peak=2566 vol=7 loss=5%
+frames=3746 dropped=181 concealed=181 q_full=0 enc=92us dec=63us peak=3207 vol=7 loss=5%
+frames=3799 dropped=185 concealed=185 q_full=0 enc=91us dec=64us peak=6033 vol=5 loss=5%
+frames=3851 dropped=190 concealed=190 q_full=0 enc=91us dec=64us peak=1642 vol=3 loss=5%
+frames=3904 dropped=193 concealed=193 q_full=0 enc=92us dec=63us peak=679 vol=3 loss=5%
+frames=3956 dropped=195 concealed=195 q_full=0 enc=92us dec=63us peak=1676 vol=3 loss=5%
+frames=3966 dropped=196 concealed=196 q_full=0 enc=92us dec=64us peak=350 vol=3 loss=5%
+frames=3966 dropped=196 concealed=196 q_full=0 enc=92us dec=64us peak=938 vol=3 loss=5%
+frames=3966 dropped=196 concealed=196 q_full=0 enc=92us dec=64us peak=2540 vol=3 loss=5%
+E BOD:ets Jul 29 2019 12:21:46
+
+rst:0x1  etets Jul 29 2019 12:21:46
+
+rst:0x3 (SW_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)ets Jul 29 2019 ets Ju29 2019 12:21:46
+
+rs �et�ets Jul 29 2019 12:21:46
+
+rst:0x1   eRձ�29 2019 � ets Jul 29 2019 12:21:ets Jul 29 2   ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 271414342, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6280
+load:0x40078000,len:15736
+load:0x40080400,len:4
+load:0x40080404,len:3920
+entry 0x40080648
+[0;32mI (30) boot: ESP-IDF v5.4.4 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Oct 11 2026 01:05:23[0m
+[0;32mI (30) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 8MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs             ets Jul 29 2019 12:21:46[0m
+
+rst:0x6 (SDIO_RESET),boot:0x13 (SPI_FAST_�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 271414342, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6280
+load:0x40078000,len:15736
+load:0x40080400,len:4
+load:0x40080404,len:3920
+entry 0x40080648
+[0;32mI (30) boot: ESP-IDF v5.4.4 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Oct 11 2026 01:05:23[0m
+[0;32mI (30) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 8MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0cecch ( 52940) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001cef4 vaddr=3ffb0000 size=0286ch ( 10348) load[0m
+[0;32mI (111) esp_image: segment 2: paddr=0001f768 vaddr=40080000 size=008b0h (  2224) load[0m
+[0;32mI (112) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1c2e8h (115432) map[0m
+[0;32mI (158) esp_image: segment 4: paddr=0003c310 vaddr=400808b0 size=0d6b4h ( 54964) load[0m
+[0;32mI (179) esp_image: segment 5: paddr=000499cc vaddr=50000000 size=0001ch (    28) load[0m
+[0;32mI (186) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (186) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (206) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (206) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (208) app_init: Application information:[0m
+[0;32mI (211) app_init: Project name:     walkie_talkie[0m
+[0;32mI (216) app_init: App version:      a8d2dee-dirty[0m
+[0;32mI (220) app_init: Compile time:     Oct 11 2026 01:04:46[0m
+[0;32mI (225) app_init: ELF file SHA256:  2f4608caf...[0m
+[0;32mI (230) app_init: ESP-IDF:          v5.4.4[0m
+[0;32mI (234) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (237) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (241) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (245) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (252) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (257) heap_init: At 3FFB4130 len 0002BED0 (175 KiB): DRAM[0m
+[0;32mI (262) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (273) heap_init: At 4008DF64 len 0001209C (72 KiB): IRAM[0m
+[0;32mI (279) spi_flash: detected chip: generic[0m
+[0;32mI (282) spi_flash: flash io: dio[0m
+[0;32mI (285) main_task: Started on CPU0[0m
+[0;32mI (288) main_task: Calling app_main()[0m
+[0;32mI (301) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (302) gpio: GPIO[13]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (309) gpio: GPIO[7]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (317) gpio: GPIO[14]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (326) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (334) main: mode: audio loopback[0m
+[0;32mI (364) oled: SSD1306 ready at 0x3C[0m
+[0;32mI (365) gpio: GPIO[4]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (365) gpio: GPIO[21]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (374) input: PTT on GPIO4, encoder A/B/SW on GPIO5/19/21[0m
+[0;32mI (380) gpio: GPIO[8]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (387) audio: I2S ready: mic on I2S0, amp on I2S1, 16000 Hz, 320 sample frames[0m
+[0;32mI (394) loopback: Hold PTT and talk. Keep the speaker away from the mic or turn the volume down.[0m
+E BOD: Brownout detector was triggered
+
+
+ets Jul 29 2010  ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 271414342, SPIWP:0xee
+clk_drv:0x00, ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLets J ets Jul 29 2019 12:21 ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 271414342, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6280
+load:0x40078000,len:15736
+load:0x40080400,len:4
+load:0x40080404,len:3920
+entry 0x40080648
+[0;32mI (30) boot: ESP-IDF v5.4.4 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Oct 11 2026 01:05:23[0m
+[0;32mI (30) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 8MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0cecch ( 52940) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001cef4 vaddr=3ffb0000 size=0286ch ( 10348) load[0m
+[0;32mI (111) esp_image: segment 2: paddr=0001f768 vaddr=40080000 size=008b0h (  2224) load[0m
+[0;32mI (112) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1c2e8h (115432) map[0m
+[0;32mI (158) esp_image: segment 4: paddr=0003c310 vaddr=400808b0 size=0d6b4h ( 54964) load[0m
+[0;32mI (179) esp_image: segment 5: paddr=000499cc vaddr=50000000 size=0001ch (    28) load[0m
+[0;32mI (186) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (186) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (206) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (206) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (208) app_init: Application information:[0m
+[0;32mI (211) app_init: Project name:     walkie_talkie[0m
+[0;32mI (216) app_init: App version:      a8d2dee-dirty[0m
+[0;32mI (220) app_init: Compile time:     Oct 11 2026 01:04:46[0m
+[0;32mI (225) app_init: ELF file SHA256:  2f4608caf...[0m
+[0;32mI (230) app_init: ESP-IDF:          v5.4.4[0m
+[0;32mI (234) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (237) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (241) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (245) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (252) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (257) heap_init: At 3FFB4130 len 0002BED0 (175 KiB): DRAM[0m
+[0;32mI (262) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (273) heap_init: At 4008DF64 len 0001209C (72 KiB): IRAM[0m
+[0;32mI (279) spi_flash: detected chip: generic[0m
+[0;32mI (282) spi_flash: flash io: dio[0m
+[0;32mI (285) main_task: Started on CPU0[0m
+[0;32mI (288) main_task: Calling app_main()[0m
+[0;32mI (301) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (302) gpio: GPIO[13]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (309) gpio: GPIO[7]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (317) gpio: GPIO[14]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (326) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (334) main: mode: audio loopback[0m
+[0;32mI (364) oled: SSD1306 ready at 0x3C[0m
+[0;32mI (365) gpio: GPIO[4]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (365) gpio: GPIO[21]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (374) input: PTT on GPIO4, encoder A/B/SW on GPIO5/19/21[0m
+[0;32mI (380) gpio: GPIO[8]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (387) audio: I2S ready: mic on I2S0, amp on I2S1, 16000 Hz, 320 sample frames[0m
+[0;32mI (394) loopback: Hold PTT and talk. Keep the speaker away from the mic or turn the volume down.[0m
+frames=0 dropped=0 concealed=0 q_full=0 enc=0us dec=0us peak=603 vol=5 loss=0%
+frames=4 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=16653 vol=5 loss=0%
+frames=55 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=11154 vol=5 loss=0%
+frames=76 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=3920 vol=5 loss=0%
+frames=129 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=4354 vol=5 loss=0%
+frames=181 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=851 vol=5 loss=0%
+frames=234 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=3798 vol=5 loss=0%
+frames=286 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=3584 vol=5 loss=0%
+frames=339 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=472 vol=0 loss=0%
+frames=380 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=6724 vol=2 loss=0%
+frames=399 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=2466 vol=2 loss=0%
+frames=451 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1403 vol=4 loss=0%
+frames=485 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=6192 vol=4 loss=0%
+frames=521 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=7539 vol=4 loss=0%
+frames=574 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=200 vol=4 loss=0%
+frames=610 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=1837 vol=4 loss=0%
+frames=663 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=331 vol=4 loss=0%
+frames=688 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=2996 vol=4 loss=0%
+frames=696 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=546 vol=4 loss=0%
+E BOD:ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 271414342, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6280
+load:0x40078000,len:15736
+load:0x40080400,len:4
+load:0x40080404,len:3920
+entry 0x40080648
+[0;32mI (30) boot: ESP-IDF v5.4.4 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Oct 11 2026 01:05:23[0m
+[0;32mI (30) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 8MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0cecch ( 52940) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001cef4 vaddr=3ffb0000 size=0286ch ( 10348) load[0m
+[0;32mI (111) esp_image: segment 2: paddr=0001f768 vaddr=40080000 size=008b0h (  2224) load[0m
+[0;32mI (112) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1c2e8h (115432) map[0m
+[0;32mI (158) esp_image: segment 4: paddr=0003c310 vaddr=400808b0 size=0d6b4h ( 54964) load[0m
+[0;32mI (179) esp_image: segment 5: paddr=000499cc vaddr=50000000 size=0001ch (    28) load[0m
+[0;32mI (186) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (186) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (206) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (206) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (208) app_init: Application information:[0m
+[0;32mI (211) app_init: Project name:     walkie_talkie[0m
+[0;32mI (216) app_init: App version:      a8d2dee-dirty[0m
+[0;32mI (220) app_init: Compile time:     Oct 11 2026 01:04:46[0m
+[0;32mI (225) app_init: ELF file SHA256:  2f4608caf...[0m
+[0;32mI (230) app_init: ESP-IDF:          v5.4.4[0m
+[0;32mI (234) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (237) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (241) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (245) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (252) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (257) heap_init: At 3FFB4130 len 0002BED0 (175 KiB): DRAM[0m
+[0;32mI (262) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (273) heap_init: At 4008DF64 len 0001209C (72 KiB): IRAM[0m
+[0;32mI (279) spi_flash: detected chip: generic[0m
+[0;32mI (282) spi_flash: flash io: dio[0m
+[0;32mI (285) main_task: Started on CPU0[0m
+[0;32mI (288) main_task: Calling app_main()[0m
+[0;32mI (301) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (302) gpio: GPIO[13]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (309) gpio: GPIO[7]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (317) gpio: GPIO[14]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (326) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (334) main: mode: audio loopback[0m
+[0;32mI (364) oled: SSD1306 ready at 0x3C[0m
+[0;32mI (365) gpio: GPIO[4]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (365) gpio: GPIO[21]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (374) input: PTT on GPIO4, encoder A/B/SW on GPIO5/19/21[0m
+[0;32mI (380) gpio: GPIO[8]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (387) audio: I2S ready: mic on I2S0, amp on I2S1, 16000 Hz, 320 sample frames[0m
+[0;32mI (394) loopback: Hold PTT and talk. Keep the speaker away from the mic or turn the volume down.[0m
+frames=0 dropped=0 concealed=0 q_full=0 enc=0us dec=0us peak=285 vol=5 loss=0%
+frames=0 dropped=0 concealed=0 q_full=0 enc=0us dec=0us peak=238 vol=5 loss=0%
+frames=42 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1943 vol=5 loss=0%
+frames=42 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=764 vol=5 loss=0%
+frames=42 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=293 vol=3 loss=0%
+frames=85 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=2987 vol=3 loss=0%
+frames=138 dropped=0 concealed=0 q_full=0 enc=91us dec=63us peak=1106 vol=3 loss=0%
+frames=190 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=2547 vol=3 loss=0%
+frames=243 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=494 vol=3 loss=0%
+frames=295 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=4424 vol=3 loss=0%
+frames=348 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=603 vol=3 loss=0%
+frames=400 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=3515 vol=3 loss=0%
+frames=453 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=32768 vol=3 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1218 vol=3 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=32767 vol=3 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=9850 vol=3 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=19143 vol=3 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=13830 vol=3 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=11976 vol=3 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1553 vol=3 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1018 vol=3 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=327 vol=3 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=556 vol=3 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=733 vol=3 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=605 vol=3 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=2787 vol=3 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=953 vol=3 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=923 vol=3 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=292 vol=3 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=3384 vol=3 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=223 vol=3 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=499 vol=3 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=409 vol=3 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=364 vol=3 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=2916 vol=3 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=380 vol=3 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=4395 vol=3 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=300 vol=3 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=587 vol=6 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=11258 vol=6 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=8618 vol=6 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=8368 vol=6 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=436 vol=6 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=9874 vol=6 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=7721 vol=6 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=18116 vol=6 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1185 vol=5 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=665 vol=5 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1176 vol=5 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1032 vol=5 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=822 vol=5 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=2958 vol=5 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=13807 vol=5 loss=0%
+frames=481 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1108 vol=5 loss=0%
+frames=492 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=6567 vol=5 loss=0%
+frames=538 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=216 vol=5 loss=0%
+frames=569 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=4469 vol=5 loss=0%
+frames=569 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=2180 vol=5 loss=0%
+frames=616 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=522 vol=5 loss=0%
+frames=668 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=1564 vol=5 loss=0%
+frames=706 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1071 vol=5 loss=0%
+frames=706 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1817 vol=5 loss=0%
+frames=706 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=320 vol=5 loss=0%
+frames=706 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=6114 vol=5 loss=0%
+frames=706 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=644 vol=5 loss=0%
+frames=706 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=342 vol=5 loss=0%
+frames=706 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1146 vol=5 loss=0%
+frames=706 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=5946 vol=5 loss=0%
+frames=732 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=264 vol=5 loss=0%
+frames=784 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=205 vol=5 loss=0%
+frames=837 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=413 vol=5 loss=0%
+frames=889 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=168 vol=5 loss=0%
+frames=942 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=254 vol=5 loss=0%
+frames=994 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=267 vol=5 loss=0%
+frames=1047 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=224 vol=5 loss=0%
+frames=1099 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1841 vol=5 loss=0%
+frames=1152 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=325 vol=5 loss=0%
+frames=1204 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=328 vol=5 loss=0%
+frames=1257 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=202 vol=5 loss=0%
+frames=1309 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=609 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=477 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=606 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=507 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=398 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=275 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=285 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=291 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=264 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=373 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=353 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=273 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=294 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=167 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=224 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=209 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=306 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=268 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=239 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=319 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=219 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=993 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=4769 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=2571 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=561 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=379 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1086 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=500 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1883 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=416 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=924 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=441 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=392 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=771 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=283 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=340 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1204 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=382 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=525 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=720 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=401 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=650 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=442 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=366 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=424 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=686 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=3777 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=324 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=304 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=539 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=167 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=309 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=605 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=320 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=310 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=413 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=646 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=344 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=280 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=538 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=270 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1242 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=817 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=736 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=342 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=567 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=168 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=587 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=227 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=263 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=355 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1232 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=873 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=498 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=450 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=251 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=443 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=457 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=422 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=287 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=331 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=612 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=511 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=532 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1492 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=708 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=355 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=495 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=803 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=533 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=206 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=416 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=364 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=685 vol=5 loss=0%
+frames=1345 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=21952 vol=5 loss=0%
+frames=1398 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=932 vol=5 loss=0%
+frames=1450 dropped=0 concealed=0 q_full=0 enc=91us dec=63us peak=1304 vol=5 loss=0%
+frames=1503 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=984 vol=5 loss=0%
+frames=1555 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=486 vol=5 loss=0%
+frames=1608 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1504 vol=5 loss=0%
+fets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x3 (DOWNLOAD_BOOT(UART0/UART1/SDIO_REI_REO_V2))
+waiting for download
+ ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 271414342, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6280
+load:0x40078000,len:15736
+load:0x40080400,len:4
+load:0x40080404,len:3920
+entry 0x40080648
+[0;32mI (30) boot: ESP-IDF v5.4.4 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Oct 11 2026 01:05:23[0m
+[0;32mI (30) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 8MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0cecch ( 52940) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001cef4 vaddr=3ffb0000 size=0286ch ( 10348) load[0m
+[0;32mI (111) esp_image: segment 2: paddr=0001f768 vaddr=40080000 size=008b0h (  2224) load[0m
+[0;32mI (112) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1c2e8h (115432) map[0m
+[0;32mI (158) esp_image: segment 4: paddr=0003c310 vaddr=400808b0 size=0d6b4h ( 54964) load[0m
+[0;32mI (179) esp_image: segment 5: paddr=000499cc vaddr=50000000 size=0001ch (    28) load[0m
+[0;32mI (186) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (186) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (206) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (206) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (208) app_init: Application information:[0m
+[0;32mI (211) app_init: Project name:     walkie_talkie[0m
+[0;32mI (216) app_init: App version:      a8d2dee-dirty[0m
+[0;32mI (220) app_init: Compile time:     Oct 11 2026 01:04:46[0m
+[0;32mI (225) app_init: ELF file SHA256:  2f4608caf...[0m
+[0;32mI (230) app_init: ESP-IDF:          v5.4.4[0m
+[0;32mI (234) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (237) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (241) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (245) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (252) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (257) heap_init: At 3FFB4130 len 0002BED0 (175 KiB): DRAM[0m
+[0;32mI (262) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (273) heap_init: At 4008DF64 len 0001209C (72 KiB): IRAM[0m
+[0;32mI (279) spi_flash: detected chip: generic[0m
+[0;32mI (282) spi_flash: flash io: dio[0m
+[0;32mI (285) main_task: Started on CPU0[0m
+[0;32mI (288) main_task: Calling app_main()[0m
+[0;32mI (301) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (302) gpio: GPIO[13]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (309) gpio: GPIO[7]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (317) gpio: GPIO[14]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (326) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (334) main: mode: audio loopback[0m
+[0;32mI (364) oled: SSD1306 ready at 0x3C[0m
+[0;32mI (365) gpio: GPIO[4]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (365) gpio: GPIO[21]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (374) input: PTT on GPIO4, encoder A/B/SW on GPIO5/19/21[0m
+[0;32mI (380) gpio: GPIO[8]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (387) audio: I2S ready: mic on I2S0, amp on I2S1, 16000 Hz, 320 sample frames[0m
+[0;32mI (394) loopback: Hold PTT and talk. Keep the speaker away from the mic or turn the volume down.[0m
+frames=8 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=12834 vol=5 loss=0%
+frames=60 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=353 vol=5 loss=0%
+frames=113 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=7503 vol=5 loss=0%
+frames=165 dropped=0 concealed=0 q_full=0 enc=93us dec=63us peak=5303 vol=5 loss=0%
+[0;33mW (5118) i2c.common: GPIO 22 is not usable, maybe conflict with others[0m
+[0;33mW (5118) i2c.common: GPIO 20 is not usable, maybe conflict with others[0m
+[1;31mE (5120) i2c.master: I2C hardware timeout detected[0m
+[0;33mW (5174) i2c.common: GPIO 22 is not usable, maybe conflict with others[0m
+[0;33mW (5174) i2c.common: GPIO 20 is not usable, maybe conflict with others[0m
+[0;33mW (5376) i2c.common: GPIO 22 is not usable, maybe conflict with others[0m
+[0;33mW (5376) i2c.common: GPIO 20 is not usable, maybe conflict with others[0m
+[1;31mE (5378) i2c.master: I2C hardware timeout detected[0m
+[0;33mW (5432) i2c.common: GPIO 22 is not usable, maybe conflict with others[0m
+[0;33mW (5432) i2c.common: GPIO 20 is not usable, maybe conflict with others[0m
+frames=215 dropped=0 concealed=0 q_full=0 enc=91us dec=63us peak=28672 vol=5 loss=0%
+frames=267 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=28494 vol=5 loss=0%
+frames=319 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1811 vol=5 loss=0%
+frames=372 dropped=0 concealed=0 q_full=0 enc=93us dec=63us peak=9806 vol=5 loss=0%
+frames=424 dropped=0 concealed=0 q_full=0 enc=91us dec=63us peak=32768 vol=5 loss=0%
+frames=477 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=28672 vol=5 loss=0%
+frames=529 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=32768 vol=5 loss=0%
+frames=582 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=970 vol=5 loss=0%
+frames=634 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=1165 vol=5 loss=0%
+frames=687 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=30359 vol=5 loss=0%
+frames=739 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=28672 vol=5 loss=0%
+frames=792 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=7482 vol=5 loss=0%
+frames=844 dropped=0 concealed=0 q_full=0 enc=91us dec=64us peak=28672 vol=5 loss=0%
+frames=897 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=3185 vol=5 loss=0%
+frames=949 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1442 vol=5 loss=0%
+frames=950 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=449 vol=5 loss=0%
+frames=950 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=469 vol=5 loss=0%
+frames=963 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=5772 vol=5 loss=0%
+frames=1015 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=11421 vol=5 loss=0%
+frames=1068 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=2664 vol=5 loss=0%
+frames=1120 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=590 vol=5 loss=0%
+frames=1173 dropped=0 concealed=0 q_full=0 enc=91us dec=63us peak=32768 vol=5 loss=0%
+frames=1225 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=7539 vol=5 loss=0%
+frames=1278 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=19208 vol=5 loss=0%
+frames=1330 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=3168 vol=5 loss=0%
+frames=1383 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=24941 vol=5 loss=0%
+frames=1435 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=28672 vol=5 loss=0%
+frames=1488 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=32767 vol=5 loss=0%
+frames=1540 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=7540 vol=5 loss=0%
+frames=1593 dropped=0 concealed=0 q_full=0 enc=93us dec=63us peak=14783 vol=5 loss=0%
+frames=1645 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=9621 vol=5 loss=0%
+frames=1698 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=802 vol=5 loss=0%
+frames=1750 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=2468 vol=5 loss=0%
+frames=1803 dropped=0 concealed=0 q_full=0 enc=93us dec=63us peak=452 vol=5 loss=0%
+frames=1855 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=28672 vol=5 loss=0%
+frames=1908 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=28672 vol=5 loss=0%
+frames=1960 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=28672 vol=5 loss=0%
+frames=2013 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=28672 vol=5 loss=0%
+frames=2065 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=9531 vol=5 loss=0%
+frames=2118 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1121 vol=5 loss=0%
+frames=2170 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=874 vol=5 loss=0%
+frames=2223 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=874 vol=5 loss=0%
+frames=2275 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=11362 vol=5 loss=0%
+frames=2328 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=5455 vol=5 loss=0%
+frames=2380 dropped=0 concealed=0 q_full=0 enc=91us dec=64us peak=28672 vol=5 loss=0%
+frames=2433 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=2912 vol=5 loss=0%
+frames=2485 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=478 vol=1 loss=0%
+frames=2538 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=2334 vol=2 loss=0%
+frames=2590 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=8618 vol=2 loss=0%
+frames=2643 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=5560 vol=2 loss=0%
+frames=2695 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=3234 vol=7 loss=0%
+frames=2748 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=5726 vol=7 loss=0%
+frames=2800 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=4883 vol=7 loss=0%
+frames=2853 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=306 vol=7 loss=0%
+frames=2905 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=1188 vol=6 loss=0%
+frames=2958 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=3802 vol=6 loss=0%
+frames=3010 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=659 vol=6 loss=0%
+frames=3063 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1899 vol=6 loss=0%
+frames=3115 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=2358 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=3378 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=5419 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1017 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=330 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1313 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1176 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=376 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1310 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=513 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=363 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=254 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=481 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1181 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1059 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=715 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1457 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1280 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=2022 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=755 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=2047 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=946 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=275 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=616 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=469 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=942 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=270 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=310 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=425 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=225 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=212 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=248 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=613 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=317 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=744 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=295 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=979 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=503 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=2519 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=4100 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1357 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=592 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1218 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=312 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=4381 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=437 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=454 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=314 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=234 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=322 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1949 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=697 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=301 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1088 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=288 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=330 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=713 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=247 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=387 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=782 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=775 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=476 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1454 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=3596 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1887 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=365 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=306 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=212 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1795 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1079 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1240 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=496 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=891 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=581 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=965 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=496 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=497 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1011 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=239 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=325 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=246 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=610 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=301 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=851 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=504 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=635 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=893 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=287 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=302 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=334 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=358 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=404 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=375 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=226 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=454 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=315 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=210 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=239 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=193 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=282 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=300 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=254 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=292 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=322 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=338 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=601 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=337 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=473 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=393 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=690 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=601 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=332 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=576 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=420 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=359 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=365 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=315 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=558 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=283 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=259 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=313 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=560 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=287 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=392 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1518 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=492 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=886 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=676 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=628 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=243 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=266 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=687 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=2759 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=504 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=916 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=826 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1022 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=597 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=560 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=2475 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=714 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=671 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=364 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1199 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1469 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=745 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=611 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=913 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1254 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=817 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=376 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1717 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=220 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=258 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=816 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=573 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=310 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=350 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1156 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=871 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=826 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=294 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=397 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=423 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1116 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=582 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=283 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=557 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=606 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=428 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=707 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=3381 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=443 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=275 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=439 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=245 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=266 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1827 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=345 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=633 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=319 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=275 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=262 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=210 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=320 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=338 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=300 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=457 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=300 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=541 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=254 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=302 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=245 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=396 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=346 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=287 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=335 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=251 vol=6 loss=0%
+frames=3148 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=362 vol=6 loss=0%
+E BOD: ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 271414342, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6280
+load:0x40078000,len:15736
+load:0x40080400,len:4
+load:0x40080404,len:3920
+entry 0x40080648
+[0;32mI (30) boot: ESP-IDF v5.4.4 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Oct 11 2026 01:05:23[0m
+[0;32mI (30) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 8MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0cecch ( 52940) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001cef4 vaddr=3ffb0000 size=0286ch ( 10348) load[0m
+[0;32mI (111) esp_image: segment 2: paddr=0001f768 vaddr=40080000 size=008b0h (  2224) load[0m
+[0;32mI (112) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1c2e8h (115432) map[0m
+[0;32mI (158) esp_image: segment 4: paddr=0003c310 vaddr=400808b0 size=0d6b4h ( 54964) load[0m
+[0;32mI (179) esp_image: segment 5: paddr=000499cc vaddr=50000000 size=0001ch (    28) load[0m
+[0;32mI (186) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (186) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (206) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (206) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (208) app_init: Application information:[0m
+[0;32mI (211) app_init: Project name:     walkie_talkie[0m
+[0;32mI (216) app_init: App version:      a8d2dee-dirty[0m
+[0;32mI (220) app_init: Compile time:     Oct 11 2026 01:04:46[0m
+[0;32mI (225) app_init: ELF file SHA256:  2f4608caf...[0m
+[0;32mI (230) app_init: ESP-IDF:          v5.4.4[0m
+[0;32mI (234) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (237) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (241) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (245) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (252) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (257) heap_init: At 3FFB4130 len 0002BED0 (175 KiB): DRAM[0m
+[0;32mI (262) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (273) heap_init: At 4008DF64 len 0001209C (72 KiB): IRAM[0m
+[0;32mI (279) spi_flash: detected chip: generic[0m
+[0;32mI (282) spi_flash: flash io: dio[0m
+[0;32mI (285) main_task: Started on CPU0[0m
+[0;32mI (288) main_task: Calling app_main()[0m
+[0;32mI (301) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (302) gpio: GPIO[13]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (309) gpio: GPIO[7]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (317) gpio: GPIO[14]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (326) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (334) main: mode: audio loopback[0m
+[0;32mI (364) oled: SSD1306 ready at 0x3C[0m
+[0;32mI (365) gpio: GPIO[4]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (365) gpio: GPIO[21]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (374) input: PTT on GPIO4, encoder A/B/SW on GPIO5/19/21[0m
+[0;32mI (380) gpio: GPIO[8]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (387) audio: I2S ready: mic on I2S0, amp on I2S1, 16000 Hz, 320 sample frames[0m
+[0;32mI (394) loopback: Hold PTT and talk. Keep the speaker away from the mic or turn the volume down.[0m
+frames=0 dropped=0 concealed=0 q_full=0 enc=0us dec=0us peak=2826 vol=5 loss=0%
+frames=0 dropped=0 concealed=0 q_full=0 enc=0us dec=0us peak=7141 vol=5 loss=0%
+frames=0 dropped=0 concealed=0 q_full=0 enc=0us dec=0us peak=487 vol=5 loss=0%
+frames=37 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1725 vol=5 loss=0%
+frames=90 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=20942 vol=5 loss=0%
+frames=142 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=748 vol=5 loss=0%
+frames=171 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=1198 vol=5 loss=0%
+frames=171 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=27874 vol=5 loss=0%
+frames=213 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=28672 vol=5 loss=0%
+frames=265 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=20067 vol=5 loss=0%
+frames=318 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=16806 vol=5 loss=0%
+frames=370 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=1680 vol=5 loss=0%
+frames=423 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=788 vol=5 loss=0%
+frames=475 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=436 vol=5 loss=0%
+frames=528 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=421 vol=4 loss=0%
+frames=580 dropped=0 concealed=0 q_full=0 enc=93us dec=63us peak=6155 vol=4 loss=0%
+frames=633 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=32767 vol=4 loss=0%
+frames=685 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=9279 vol=4 loss=0%
+frames=738 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=32768 vol=4 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=93us dec=63us peak=12318 vol=4 loss=0%
+frames=843 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=25147 vol=4 loss=0%
+frames=895 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=4721 vol=4 loss=0%
+frames=948 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=25087 vol=4 loss=0%
+frames=1000 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=27561 vol=4 loss=0%
+frames=1053 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=1096 vol=4 loss=0%
+frames=1105 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=4221 vol=4 loss=0%
+frames=1158 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=1826 vol=4 loss=0%
+frames=1210 dropped=0 concealed=0 q_full=0 enc=91us dec=63us peak=32768 vol=4 loss=0%
+frames=1263 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=28672 vol=4 loss=0%
+frames=1315 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1425 vol=4 loss=0%
+frames=1368 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=332 vol=2 loss=0%
+frames=1420 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=330 vol=8 loss=0%
+frames=1473 dropped=0 concealed=0 q_full=0 enc=91us dec=64us peak=32768 vol=8 loss=0%
+frames=1525 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=28672 vol=8 loss=0%
+frames=1578 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=28672 vol=8 loss=0%
+frames=1630 dropped=0 concealed=0 q_full=0 enc=91us dec=63us peak=2057 vol=8 loss=0%
+frames=1683 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=3262 vol=6 loss=0%
+frames=1735 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=9850 vol=6 loss=0%
+frames=1788 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=4169 vol=6 loss=0%
+frames=1840 dropped=0 concealed=0 q_full=0 enc=91us dec=64us peak=1086 vol=5 loss=0%
+frames=1893 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=19047 vol=5 loss=0%
+frames=1945 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=21952 vol=5 loss=0%
+frames=1998 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=17416 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=2972 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=2881 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=434 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=660 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=239 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=326 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=296 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=245 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=375 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=721 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=1895 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=1015 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=361 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=308 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=259 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=328 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=253 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=259 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=302 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=187 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=1095 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=283 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=429 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=523 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=308 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=385 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=456 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=261 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=246 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=340 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=281 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=4318 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=450 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=398 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=672 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=2255 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=3230 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=1021 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=538 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=2285 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=2873 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=224 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=476 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=383 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=579 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=320 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=480 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=741 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=656 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=274 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=427 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=374 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=1248 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=679 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=398 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=629 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=723 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=462 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=1169 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=436 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=204 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=630 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=1253 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=3375 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=297 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=375 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=391 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=396 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=375 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=385 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=357 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=391 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=410 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=505 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=340 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=253 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=372 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=417 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=280 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=558 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=237 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=403 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=453 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=147 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=303 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=236 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=227 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=235 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=414 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=277 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=308 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=272 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=348 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=366 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=447 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=434 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=307 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=237 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=305 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=361 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=255 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=242 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=322 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=910 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=439 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=5215 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=598 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=2154 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=308 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=684 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=319 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=2668 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=2766 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=321 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=298 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=291 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=256 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=416 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=295 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=1807 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=2458 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=2898 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=3278 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=351 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=2608 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=2041 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=252 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=1564 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=2935 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=2131 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=1830 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=1634 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=3017 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=1106 vol=5 loss=0%
+frames=2042 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=272 vol=5 loss=0%
+frames=2091 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=7666 vol=5 loss=0%
+frames=2143 dropped=0 concealed=0 q_full=0 enc=91us dec=64us peak=6748 vol=5 loss=0%
+frames=2196 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=3610 vol=5 loss=0%
+frames=2248 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=3245 vol=5 loss=0%
+frames=2301 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=605 vol=5 loss=0%
+frames=2353 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=565 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=916 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=306 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=324 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=179 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=201 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=240 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=327 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=394 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=258 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=287 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=318 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=400 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=271 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=286 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=245 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=260 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=186 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=280 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=344 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=284 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=224 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=217 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=311 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=315 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=302 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=303 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=420 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=224 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=321 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=234 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=416 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=341 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=272 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=336 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=216 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=441 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=224 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=297 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=189 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=461 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=294 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=379 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=217 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=236 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=311 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=310 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=248 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=315 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=466 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=259 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=280 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=276 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=170 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=226 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=1235 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=194 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=286 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=931 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=1728 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=742 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=224 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=259 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=317 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=248 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=269 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=310 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=350 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=241 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=477 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=230 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=263 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=264 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=241 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=269 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=372 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=225 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=292 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=294 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=231 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=764 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=347 vol=5 loss=0%
+frames=2385 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=348 vol=5 loss=0%
+frames=2410 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=1160 vol=5 loss=0%
+frames=2453 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=551 vol=5 loss=0%
+frames=2506 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=875 vol=5 loss=0%
+frames=2558 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=466 vol=5 loss=0%
+frames=2611 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=692 vol=5 loss=0%
+frames=2663 dropped=0 concealed=0 q_full=0 enc=91us dec=63us peak=377 vol=5 loss=0%
+frames=2716 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=704 vol=5 loss=0%
+frames=2768 dropped=0 concealed=0 q_full=0 enc=92us dec=64us peak=308 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=262 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=312 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=262 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=373 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=325 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=253 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=269 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=318 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=443 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=281 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=312 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=353 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=252 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=261 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=376 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=192 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=283 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=209 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=224 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=186 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=216 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=240 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=323 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=474 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=294 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=268 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=297 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=499 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=319 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=204 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=272 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=515 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=303 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=160 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=335 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=470 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=509 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=265 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=389 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=274 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=297 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=351 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=254 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=336 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=248 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=234 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=330 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=547 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=341 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=363 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=418 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=385 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=311 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=320 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=281 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=408 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=251 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=245 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=327 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=309 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=318 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=353 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=443 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=304 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=335 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=238 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=248 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=383 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=245 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=226 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=286 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=202 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=270 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=309 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=241 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=324 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=277 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=328 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=168 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=390 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=490 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=332 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=402 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=263 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=210 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=332 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=253 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=314 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=314 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=274 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=321 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=548 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=296 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=314 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=315 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=484 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=275 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=287 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=273 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=259 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=289 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=369 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=384 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=288 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=410 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=293 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=348 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=235 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=4477 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=300 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=330 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=446 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=385 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=311 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=311 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=334 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=309 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=486 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=238 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=287 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=228 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=340 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=385 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=287 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=331 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1631 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=395 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=302 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=346 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=372 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=383 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=189 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=280 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=299 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=306 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=573 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=338 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=399 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=145 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=277 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=294 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=230 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=294 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=287 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=340 vol=5 loss=0%
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=245 vol=5 loss=0%
+[0;33mW (441167) i2c.common: GPIO 22 is not usable, maybe conflict with others[0m
+[0;33mW (441167) i2c.common: GPIO 20 is not usable, maybe conflict with others[0m
+[0;33mW (441480) i2c.common: GPIO 22 is not usable, maybe conflict with others[0m
+[0;33mW (441480) i2c.common: GPIO 20 is not usable, maybe conflict with others[0m
+[1;31mE (441482) i2c.master: I2C hardware timeout detected[0m
+[0;33mW (441537) i2c.common: GPIO 22 is not usable, maybe conflict with others[0m
+[0;33mW (441537) i2c.common: GPIO 20 is not usable, maybe conflict with others[0m
+frames=2781 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=262 vol=5 loss=0%
+E BOD: ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 271414342, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6280
+load:0x40078000,len:15736
+load:0x40080400,len:4
+load:0x40080404,len:3920
+entry 0x40080648
+[0;32mI (30) boot: ESP-IDF v5.4.4 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Oct 11 2026 01:05:23[0m
+[0;32mI (30) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 8MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0cecch ( 52940) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001cef4 vaddr=3ffb0000 size=0286ch ( 10348) load[0m
+[0;32mI (111) esp_image: segment 2: paddr=0001f768 vaddr=40080000 size=008b0h (  2224) load[0m
+[0;32mI (112) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1c2e8h (115432) map[0m
+[0;32mI (158) esp_image: segment 4: paddr=0003c310 vaddr=400808b0 size=0d6b4h ( 54964) load[0m
+[0;32mI (179) esp_image: segment 5: paddr=000499cc vaddr=50000000 size=0001ch (    28) load[0m
+[0;32mI (186) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (186) boot: Disabling RNG early entropy source...[0m
+[0;32mI (197) cpu_start: Multicore app[0m
+[0;32mI (206) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (206) cpu_start: Pro cpu start user code[0m
+[0;32mI (206) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (208) app_init: Application information:[0m
+[0;32mI (211) app_init: Project name:     walkie_talkie[0m
+[0;32mI (216) app_init: App version:      a8d2dee-dirty[0m
+[0;32mI (220) app_init: Compile time:     Oct 11 2026 01:04:46[0m
+[0;32mI (225) app_init: ELF file SHA256:  2f4608caf...[0m
+[0;32mI (230) app_init: ESP-IDF:          v5.4.4[0m
+[0;32mI (234) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (237) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (241) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (245) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (252) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (257) heap_init: At 3FFB4130 len 0002BED0 (175 KiB): DRAM[0m
+[0;32mI (262) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (267) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (273) heap_init: At 4008DF64 len 0001209C (72 KiB): IRAM[0m
+[0;32mI (279) spi_flash: detected chip: generic[0m
+[0;32mI (282) spi_flash: flash io: dio[0m
+[0;32mI (285) main_task: Started on CPU0[0m
+[0;32mI (288) main_task: Calling app_main()[0m
+[0;32mI (301) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (302) gpio: GPIO[13]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (309) gpio: GPIO[7]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (317) gpio: GPIO[14]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (326) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (334) main: mode: audio loopback[0m
+[0;32mI (364) oled: SSD1306 ready at 0x3C[0m
+[0;32mI (365) gpio: GPIO[4]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (365) gpio: GPIO[21]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (374) input: PTT on GPIO4, encoder A/B/SW on GPIO5/19/21[0m
+[0;32mI (380) gpio: GPIO[8]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (387) audio: I2S ready: mic on I2S0, amp on I2S1, 16000 Hz, 320 sample frames[0m
+[0;32mI (394) loopback: Hold PTT and talk. Keep the speaker away from the mic or turn the volume down.[0m
+frames=0 dropped=0 concealed=0 q_full=0 enc=0us dec=0us peak=419 vol=5 loss=0%
+frames=49 dropped=0 concealed=0 q_full=0 enc=91us dec=64us peak=5255 vol=5 loss=0%
+frames=101 dropped=0 concealed=0 q_full=0 enc=91us dec=64us peak=6597 vol=5 loss=0%
+frames=154 dropped=0 concealed=0 q_full=0 enc=91us dec=63us peak=4417 vol=5 loss=0%
+frames=206 dropped=0 concealed=0 q_full=0 enc=91us dec=64us peak=14706 vol=5 loss=0%
+frames=259 dropped=0 concealed=0 q_full=0 enc=91us dec=64us peak=24933 vol=5 loss=0%
+frames=311 dropped=0 concealed=0 q_full=0 enc=91us dec=64us peak=5050 vol=5 loss=0%
+frames=364 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=396 vol=5 loss=0%
+frames=416 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=351 vol=7 loss=0%
+frames=468 dropped=0 concealed=0 q_full=0 enc=91us dec=63us peak=28671 vol=7 loss=0%
+frames=521 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=154 vol=7 loss=0%
+frames=551 dropped=0 concealed=0 q_full=0 enc=91us dec=64us peak=4105 vol=7 loss=0%
+frames=594 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=5558 vol=7 loss=0%
+frames=594 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=2086 vol=6 loss=0%
+frames=630 dropped=0 concealed=0 q_full=0 enc=91us dec=64us peak=4418 vol=6 loss=0%
+frames=682 dropped=0 concealed=0 q_full=0 enc=91us dec=64us peak=10731 vol=6 loss=0%
+frames=735 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=2583 vol=6 loss=0%
+frames=752 dropped=0 concealed=0 q_full=0 enc=91us dec=63us peak=348 vol=6 loss=0%
+frames=752 dropped=0 concealed=0 q_full=0 enc=91us dec=63us peak=812 vol=6 loss=0%
+frames=752 dropped=0 concealed=0 q_full=0 enc=91us dec=63us peak=364 vol=6 loss=0%
+frames=752 dropped=0 concealed=0 q_full=0 enc=91us dec=63us peak=335 vol=6 loss=0%
+frames=752 dropped=0 concealed=0 q_full=0 enc=91us dec=63us peak=319 vol=6 loss=0%
+frames=752 dropped=0 concealed=0 q_full=0 enc=91us dec=63us peak=297 vol=6 loss=0%
+frames=752 dropped=0 concealed=0 q_full=0 enc=91us dec=63us peak=416 vol=6 loss=0%
+frames=785 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=323 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=224 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=570 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=406 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=371 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=384 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=902 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=318 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=283 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=203 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=295 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=388 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=287 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=183 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=292 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=288 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=472 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=495 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=306 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=208 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=460 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=264 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=246 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=734 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=292 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=793 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=275 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=210 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=182 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=224 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=252 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=176 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=274 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=257 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=410 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=360 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=335 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=165 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=343 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=344 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=335 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=203 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=262 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=189 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=253 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=197 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=339 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=316 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=237 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=415 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=269 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=350 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=220 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=256 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=288 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=348 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=269 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=285 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=271 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=238 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=313 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=274 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=299 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=240 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=320 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=280 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=275 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=321 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=260 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=201 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=249 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=259 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=287 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=304 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=281 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=270 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=224 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=235 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=325 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=477 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=327 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=224 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=343 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=405 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=238 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=274 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=301 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=282 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=374 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=308 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=268 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=279 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=237 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=265 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=286 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=200 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=266 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=306 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=165 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=233 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=212 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=264 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=243 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=322 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=234 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=231 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=237 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=344 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=431 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=269 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=271 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=153 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=177 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=314 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=332 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=356 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=331 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=219 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=260 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=300 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=262 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=283 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=235 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=344 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=347 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=273 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=256 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=239 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=163 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=276 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=234 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=240 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=208 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=284 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=217 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=211 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=283 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=281 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=316 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=245 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=318 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=178 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=293 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=217 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=204 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=190 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=224 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=182 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=235 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=185 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=354 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=329 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=256 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=288 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=163 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=295 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=227 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=507 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=245 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=310 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=381 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=371 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=283 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=279 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=228 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=266 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=258 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=254 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=297 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=409 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=306 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=283 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=373 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=285 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=247 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=255 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=220 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=298 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=196 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=301 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=214 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=284 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=319 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=424 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=280 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=392 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=288 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=237 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=286 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=211 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=547 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=226 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=238 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=251 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=262 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=252 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=285 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=187 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=234 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=257 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=217 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=366 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=301 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=311 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=237 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=299 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=269 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=360 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=301 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=441 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=272 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=283 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=243 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=525 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=392 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=389 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=287 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=409 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=288 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=451 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=280 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=230 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=324 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=261 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=301 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=198 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=337 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=232 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=315 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=197 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=223 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=237 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=350 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=335 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=254 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=259 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=292 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=145 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=330 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=246 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=2269 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=257 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=491 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=377 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=623 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=301 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=317 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=324 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=214 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=224 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=336 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=251 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=329 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=432 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=298 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=217 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=295 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=1128 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=265 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=235 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=298 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=224 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=352 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=416 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=453 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=258 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=548 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=2481 vol=6 loss=0%
+frames=790 dropped=0 concealed=0 q_full=0 enc=92us dec=63us peak=280 vol=6 loss=0%

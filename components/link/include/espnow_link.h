@@ -16,7 +16,7 @@
 #include "freertos/message_buffer.h"
 
 // Each message in the buffer is: [int8 rssi][packet bytes...]
-#define LINK_RX_MSG_MAX (1 + 250)
+#define LINK_RX_MSG_MAX (1 + 1470)  // ESP-NOW v2 packets can be up to 1470 bytes
 
 esp_err_t link_init(uint8_t wifi_channel, bool long_range, MessageBufferHandle_t rx_buffer);
 esp_err_t link_send(const uint8_t *data, size_t len);

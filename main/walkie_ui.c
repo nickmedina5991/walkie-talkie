@@ -147,16 +147,16 @@ static void ui_task(void *arg)
 // ---------------------------------------------------------------------------
 // Drawing
 
+// Layout: titles sit in the top 16 rows (yellow on two-color OLEDs), content in
+// rows 16-63 (blue). Nothing crosses row 16. One text line is 7 pixels tall.
+
 static void draw_header(void)
 {
     EventBits_t b = xEventGroupGetBits(g_ev);
-    oled_printf(0, 0, 1, "CH%u %s", g_settings.channel, g_settings.long_range ? "LR" : "NRM");
-    int mv = g_stats.battery_mv;
-    char bat[8];
-    int pct = battery_percent(mv);
-    snprintf(bat, sizeof(bat), "%s%d%%", (b & EV_LOW_BATT) ? "!" : "", pct);
-    oled_text(OLED_W - (int)strlen(bat) * 6, 0, bat, 1);
-    for (int x = 0; x < OLED_W; x++) oled_pixel(x, 9, true);
+    char left[16], bat[8];
+    snprintf(left, sizeof(left), "CH%u %s", g_settings.channel, g_settings.long_range ? "LR" : "NRM");
+    snprintf(bat, sizeof(bat), "%s%d%%", (b & EV_LOW_BATT) ? "!" : "", battery_percent(g_stats.battery_mv));
+    oled_title(left, bat);
 }
 
 static void draw_home(void)
@@ -166,33 +166,34 @@ static void draw_home(void)
     wt_peer_t peers[WT_MAX_PEERS];
     int n = wt_roster(peers, WT_MAX_PEERS);
 
+    // rows 19-32: big state word
     if (b & EV_TX_ACTIVE) {
-        oled_text(0, 14, "TALKING", 2);
-        oled_text(0, 36, "MIC", 1);
-        oled_bar(22, 35, 106, 9, g_stats.mic_peak, 8000);
+        oled_text(0, 19, "TALKING", 2);
+        oled_text(0, 37, "MIC", 1);
+        oled_bar(22, 36, 106, 9, g_stats.mic_peak, 8000);
     } else if (b & EV_RX_ACTIVE) {
         char name[WT_NAME_LEN + 1];
         wt_peer_name(wt_talker_id(), name);
-        oled_text(0, 14, "RX", 2);
-        oled_printf(30, 18, 1, "%s %ddBm", name, g_stats.last_rssi);
-        oled_printf(0, 36, 1, "PEERS %d", n);
+        oled_text(0, 19, "RX", 2);
+        oled_printf(30, 23, 1, "%s %ddBm", name, g_stats.last_rssi);
+        oled_printf(0, 37, 1, "PEERS %d", n);
     } else if (b & EV_CH_BUSY) {
-        oled_text(0, 14, "BUSY", 2);
-        oled_printf(0, 36, 1, "PEERS %d", n);
+        oled_text(0, 19, "BUSY", 2);
+        oled_printf(0, 37, 1, "PEERS %d", n);
     } else {
-        oled_text(0, 14, "READY", 2);
-        oled_printf(0, 36, 1, "PEERS %d  %s", n, g_settings.name);
+        oled_text(0, 19, "READY", 2);
+        oled_printf(0, 37, 1, "PEERS %d  %s", n, g_settings.name);
     }
-    oled_text(0, 50, "VOL", 1);
-    oled_bar(22, 48, 106, 11, g_settings.volume, WT_VOLUME_MAX);
+    // rows 51-61: volume
+    oled_text(0, 53, "VOL", 1);
+    oled_bar(22, 51, 106, 11, g_settings.volume, WT_VOLUME_MAX);
 }
 
 static void draw_menu(void)
 {
-    oled_text(0, 0, "MENU", 1);
-    for (int x = 0; x < OLED_W; x++) oled_pixel(x, 9, true);
-    for (int i = 0; i < MENU_COUNT; i++) {
-        int y = 12 + i * 10;
+    oled_title("MENU", NULL);
+    for (int i = 0; i < MENU_COUNT; i++) {  // 5 items x 9 rows = rows 18-62
+        int y = 18 + i * 9;
         oled_text(4, y + 1, MENU_ITEMS[i], 1);
         if (i == s_menu_idx) oled_invert_rect(0, y, OLED_W, 9);
     }
@@ -200,41 +201,46 @@ static void draw_menu(void)
 
 static void draw_channel(void)
 {
-    oled_text(0, 0, "CHANNEL", 1);
-    oled_printf(52, 18, 3, "%d", s_edit_val);
-    oled_text(0, 56, "turn: change press: save", 1);
+    oled_title("CHANNEL", NULL);
+    char num[4];
+    snprintf(num, sizeof(num), "%d", s_edit_val);
+    oled_text((OLED_W - oled_text_width(num, 3)) / 2, 19, num, 3);  // rows 19-39
+    oled_text(0, 45, "turn: change", 1);
+    oled_text(0, 55, "press: save", 1);
 }
 
 static void draw_mode(void)
 {
-    oled_text(0, 0, "RADIO MODE", 1);
-    oled_text(0, 20, s_edit_val ? "LONG RANGE" : "NORMAL", 2);
-    oled_text(0, 42, s_edit_val ? "250 kbps, more range" : "1 Mbps, short range", 1);
-    oled_text(0, 56, "all units must match", 1);
+    oled_title("RADIO MODE", NULL);
+    oled_text(0, 19, s_edit_val ? "LONG RANGE" : "NORMAL", 2);
+    oled_text(0, 41, s_edit_val ? "250 kbps, ADPCM audio" : "1 Mbps, raw audio", 1);
+    oled_text(0, 54, "all units must match", 1);
 }
 
 static void draw_roster(void)
 {
     wt_peer_t peers[WT_MAX_PEERS];
     int n = wt_roster(peers, WT_MAX_PEERS);
-    oled_printf(0, 0, 1, "ROSTER CH%u (%d)", g_settings.channel, n);
-    for (int x = 0; x < OLED_W; x++) oled_pixel(x, 9, true);
-    if (n == 0) oled_text(0, 24, "nobody in range", 1);
-    for (int i = 0; i < n && i < 5; i++) {
-        oled_printf(0, 12 + i * 10, 1, "%-6s %4ddBm %3u%%", peers[i].name, peers[i].rssi, peers[i].battery_pct);
+    char title[24];
+    snprintf(title, sizeof(title), "ROSTER CH%u (%d)", g_settings.channel, n);
+    oled_title(title, NULL);
+    if (n == 0) oled_text(0, 34, "nobody in range", 1);
+    for (int i = 0; i < n && i < 5; i++) {  // rows 18-62
+        oled_printf(0, 18 + i * 9, 1, "%-6s %4ddBm %3u%%", peers[i].name, peers[i].rssi, peers[i].battery_pct);
     }
 }
 
 static void draw_stats(void)
 {
-    oled_text(0, 0, "STATS", 1);
-    oled_printf(0, 10, 1, "RX %lu LOST %lu", (unsigned long)g_stats.rx_audio, (unsigned long)g_stats.rx_lost);
-    oled_printf(0, 19, 1, "UNDER %lu CONC %lu", (unsigned long)g_stats.underruns, (unsigned long)g_stats.concealed);
-    oled_printf(0, 28, 1, "LATE %lu AUTH %lu", (unsigned long)g_stats.late, (unsigned long)g_stats.rx_auth_fail);
-    oled_printf(0, 37, 1, "TX %lu QFULL %lu", (unsigned long)g_stats.tx_pkts, (unsigned long)g_stats.tx_queue_full);
-    oled_printf(0, 46, 1, "ENC %luus DEC %luus", (unsigned long)g_stats.encode_us_max,
+    char id[16];
+    snprintf(id, sizeof(id), "ID %08lX", (unsigned long)wt_my_id());
+    oled_title("STATS", id);
+    oled_printf(0, 18, 1, "RX %lu LOST %lu", (unsigned long)g_stats.rx_audio, (unsigned long)g_stats.rx_lost);
+    oled_printf(0, 27, 1, "UNDER %lu CONC %lu", (unsigned long)g_stats.underruns, (unsigned long)g_stats.concealed);
+    oled_printf(0, 36, 1, "LATE %lu AUTH %lu", (unsigned long)g_stats.late, (unsigned long)g_stats.rx_auth_fail);
+    oled_printf(0, 45, 1, "TX %lu QFULL %lu", (unsigned long)g_stats.tx_pkts, (unsigned long)g_stats.tx_queue_full);
+    oled_printf(0, 54, 1, "ENC %luus DEC %luus", (unsigned long)g_stats.encode_us_max,
                 (unsigned long)g_stats.decode_us_max);
-    oled_printf(0, 55, 1, "ID %08lX", (unsigned long)wt_my_id());
 }
 
 static void display_task(void *arg)

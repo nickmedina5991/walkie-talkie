@@ -2,7 +2,7 @@
 
 Encrypted push to talk voice between Adafruit ESP32 Feather V2 boards over ESP-NOW, built on FreeRTOS with ESP-IDF v5.4.
 
-- 16 kHz voice, IMA ADPCM, 20 ms frames
+- 16 kHz voice in 20 ms frames: raw 16-bit PCM in normal mode, IMA ADPCM in Long Range mode
 - AES-128-CCM encryption with a separate key per channel, plus replay protection
 - 8 channels, normal and Espressif Long Range radio modes
 - Jitter buffer with packet loss concealment
@@ -15,7 +15,7 @@ Encrypted push to talk voice between Adafruit ESP32 Feather V2 boards over ESP-N
 walkie-talkie/
   main/                 app modes and the walkie talkie tasks
     app_hwtest.c        mode 1: hardware test
-    app_loopback.c      mode 2: mic -> ADPCM -> speaker on one unit
+    app_loopback.c      mode 2: mic -> ADPCM or raw -> speaker on one unit
     app_radiotest.c     mode 3: ESP-NOW range test (bare boards are enough)
     app_walkie.c        mode 4: the walkie talkie (audio + radio tasks)
     walkie_ui.c         mode 4: menus and OLED screens
@@ -42,7 +42,7 @@ walkie-talkie/
 - EC11 rotary encoder with push switch
 - Tactile push button (push to talk)
 - Slide switch (power)
-- 470 uF electrolytic capacitor
+- 470 uF electrolytic capacitor, 10 V or higher (anything from 100 to 1000 uF works)
 - Perfboard or breadboard, headers, hookup wire
 
 Build at least two units.
@@ -51,7 +51,7 @@ Build at least two units.
 
 1. Install ESP-IDF **v5.4.x**. Either use the VS Code "ESP-IDF" extension (Express install, pick v5.4) or follow the command line guide: https://docs.espressif.com/projects/esp-idf/en/v5.4.2/esp32/get-started/
 2. The Feather V2 uses a CH9102F USB to serial chip. macOS and Linux usually need nothing extra. On Windows, install the WCH CH9102 driver if no COM port appears when the board is plugged in.
-3. Do not open the project with PlatformIO or any other extensions. This is an ESP-IDF CMake project.
+3. Do not open the project with PlatformIO. This is an ESP-IDF CMake project.
 
 ## 2. Build
 
@@ -131,6 +131,7 @@ make -C host_tests wav
 
 - Wiring diagram: `docs/wiring.png`
 - Schematic: `docs/schematic.png`
+- Screen layouts: `docs/oled_screens.png` (drawn for a yellow and blue OLED: titles sit in the top yellow band, everything else in the blue area)
 
 Wire by the **silkscreen labels** on the Feather, not by position. The diagram follows Adafruit's standard Feather header order, but the labels are what matter.
 
@@ -148,7 +149,7 @@ Wire by the **silkscreen labels** on the Feather, not by position. The diagram f
 | | DIN | 32 | 32 |
 | | SD | TX | 8 |
 | | GAIN | not connected (9 dB) | |
-| | 470 uF cap | VIN to GND, close to the amp | |
+| | 470 uF cap | VIN to GND, close to the amp (stripe to GND) | |
 | Speaker | + / - | amp + / - | |
 | SSD1306 OLED | VCC / GND | 3V / GND | |
 | | SCL | SCL | 20 |
@@ -162,7 +163,7 @@ Wire by the **silkscreen labels** on the Feather, not by position. The diagram f
 | LiPo | | plugs into the Feather's JST socket | |
 | Timing test points (optional) | capture / TX LED / playback / encode | RX / 13 / 14 / 15 | 7 / 13 / 14 / 15 |
 
-The buttons and encoder switch to GND and use the ESP32's internal pull-ups, so no resistors are needed.
+The buttons and encoder switch to GND and use the ESP32's internal pull-ups, so no resistors are needed. Debouncing is done in firmware (20 ms for the buttons, a hardware glitch filter for the encoder), so no RC parts are needed either. If the button wires end up long inside an enclosure, an extra 10k pull-up from the pin to 3V makes them less sensitive to noise.
 
 **Using a different ESP32 board:** change the pins in `components/board/include/board.h`. On a regular ESP32 DevKit (WROOM module), GPIO6 to GPIO11 are connected to the flash chip, so move `PIN_AMP_SD` off GPIO8 and turn off **Drive timing marker pins** in menuconfig (it uses GPIO7).
 
@@ -188,6 +189,7 @@ Hold PTT and talk. You hear yourself through the full codec path about 50 to 60 
 - [ ] Voice is clear. If it is quiet, lower **Mic sample right shift** in menuconfig (14 to 13 or 12). If it distorts, raise it.
 - [ ] Turning the encoder changes volume.
 - [ ] Pressing the encoder cycles simulated packet loss (0, 5, 10, 20, 30%) to hear how concealment handles it.
+- [ ] Holding the encoder switches between ADPCM and RAW (codec bypassed). RAW is what normal mode sends over the air; ADPCM is what Long Range mode sends.
 - [ ] The log prints `enc=` and `dec=` times per frame. Both should be well under 1000 us.
 
 ### Mode 3: radio range test (`radiotest`, on two boards)
@@ -243,7 +245,7 @@ With **Drive timing marker pins** on (the default), probe RX/7 (capture), 15 (en
 - **The jitter buffer is shared across cores.** It is written on core 0 and read on core 1, behind a spinlock critical section held for a few microseconds.
 - **No nonce reuse across reboots.** Sequence numbers are reserved in NVS in blocks, so a restart can never repeat an AES-CCM nonce.
 
-Packet format (187 bytes for audio, under the 250 byte ESP-NOW limit): a 15 byte header (version, type, flags, channel, TTL, sender ID, sequence number, timestamp), then the 164 byte encrypted ADPCM frame, then an 8 byte authentication tag.
+Packet format: a 15 byte header (version, type, flags, channel, TTL, sender ID, sequence number, timestamp), then the encrypted audio frame, then an 8 byte authentication tag. In normal mode the frame is 640 bytes of raw PCM, so an audio packet is 663 bytes. That is over the old 250 byte ESP-NOW limit and needs ESP-NOW v2 (ESP-IDF 5.4 or newer on both units). At 1 Mbps it uses about 27% of the air time. Long Range mode runs at 250 kbps, which cannot carry raw 16 kHz audio (256 kbps), so it sends the 164 byte ADPCM frame instead, for a 187 byte packet.
 
 ## Troubleshooting
 
@@ -254,6 +256,7 @@ Packet format (187 bytes for audio, under the 250 byte ESP-NOW limit): a 15 byte
 | OLED dark, log says no device at 0x3C | Check SDA and SCL are not swapped; try address 0x3D in menuconfig |
 | Mic level always 0 | Check L/R is tied to GND, then turn on **Mic is on the right I2S slot** in menuconfig |
 | Mic is loud hiss or garbage | SCK and WS swapped, or SD not on A2 |
+| Speaker cuts out after a few seconds of sound, then comes back | The amp is tripping its overcurrent protection. Make sure neither speaker wire touches GND: both go only to the amp's + and - terminals. Check the 470 uF cap polarity (stripe to GND) |
 | No sound from the speaker | Amp SD must go to TX (GPIO8), VIN to BAT. The hardware test tone is the simplest check |
 | Clicks or pops at the start of received audio | The amp waking from shutdown |
 | Units do not see each other | Same Wi-Fi channel and passphrase on all units; the stats line shows `auth` climbing if passphrases differ |

@@ -20,8 +20,8 @@ static volatile uint32_t s_rx_dropped;
 
 static void on_recv(const esp_now_recv_info_t *info, const uint8_t *data, int len)
 {
-    if (len <= 0 || len > 250 || !s_rx) return;
-    uint8_t msg[LINK_RX_MSG_MAX];
+    if (len <= 0 || len > LINK_RX_MSG_MAX - 1 || !s_rx) return;
+    static uint8_t msg[LINK_RX_MSG_MAX];  // static: too big for the Wi-Fi task stack, and only this callback uses it
     msg[0] = (uint8_t)(int8_t)info->rx_ctrl->rssi;
     memcpy(msg + 1, data, len);
     if (xMessageBufferSend(s_rx, msg, len + 1, 0) == 0) s_rx_dropped++;
@@ -73,6 +73,10 @@ esp_err_t link_init(uint8_t wifi_channel, bool long_range, MessageBufferHandle_t
     };
     memcpy(peer.peer_addr, BROADCAST, ESP_NOW_ETH_ALEN);
     ESP_RETURN_ON_ERROR(esp_now_add_peer(&peer), TAG, "add peer");
+
+    uint32_t version = 0;
+    esp_now_get_version(&version);
+    ESP_LOGI(TAG, "ESP-NOW version %" PRIu32 " (v2 is needed for raw audio packets over 250 bytes)", version);
 
     uint8_t mac[6];
     esp_read_mac(mac, ESP_MAC_WIFI_STA);

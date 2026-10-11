@@ -183,7 +183,8 @@ ax.text(spx, spy + 5.6, "Speaker 4 ohm", ha="center", fontsize=9, fontweight="bo
 mpin(ax0 + 13, spy + 1.2, "+", "right")
 mpin(ax0 + 13, spy - 1.2, "-", "right")
 wire([(ax0 + 13, spy + 1.2), (spx - 4.4, spy + 1.2)], "#d62728", lw=1.8)
-wire([(ax0 + 13, spy - 1.2), (spx - 4.4, spy - 1.2)], "#111", lw=1.8)
+wire([(ax0 + 13, spy - 1.2), (spx - 4.4, spy - 1.2)], "#1f77b4", lw=1.8)
+ax.text(spx + 3.0, spy - 6.0, "both speaker wires go ONLY\nto the amp's + and - terminals.\nNeither one is ground.", ha="center", va="top", fontsize=7, color="#b00000")
 
 # ---------------------------------------------------------------- timing test points 13/15/14 (right)
 for key, lab in (("13", "TP TX LED"), ("15", "TP encode"), ("14", "TP playback")):

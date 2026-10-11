@@ -37,7 +37,7 @@ static void hw_audio_task(void *arg)
 
         if (s_beep_frames > 0 || input_ptt_held()) {
             audio_amp_enable(true);
-            audio_tone(out, AUDIO_FRAME_SAMPLES, input_ptt_held() ? 1000 : s_beep_hz, 4000, &phase);
+            audio_tone(out, AUDIO_FRAME_SAMPLES, input_ptt_held() ? 1000 : s_beep_hz, 3000, &phase);
             if (s_beep_frames > 0) s_beep_frames--;
             idle_frames = 0;
         } else {
@@ -91,11 +91,11 @@ void app_hwtest(void)
         int peak = s_mic_peak;
         if (oled_ok) {
             oled_clear();
-            oled_text(0, 0, "HARDWARE TEST", 1);
-            oled_printf(0, 12, 1, "ENC %d  SW %s", enc, input_enc_switch_held() ? "DOWN" : "up");
-            oled_printf(0, 22, 1, "PTT %s", input_ptt_held() ? "HELD (tone)" : "up");
-            oled_printf(0, 32, 1, "LAST %s", last_event);
-            oled_printf(0, 42, 1, "BAT %d.%02dV %d%%", mv / 1000, (mv % 1000) / 10, battery_percent(mv));
+            oled_title("HARDWARE TEST", NULL);
+            oled_printf(0, 17, 1, "ENC %d  SW %s", enc, input_enc_switch_held() ? "DOWN" : "up");
+            oled_printf(0, 26, 1, "PTT %s", input_ptt_held() ? "HELD (tone)" : "up");
+            oled_printf(0, 35, 1, "LAST %s", last_event);
+            oled_printf(0, 44, 1, "BAT %d.%02dV %d%%", mv / 1000, (mv % 1000) / 10, battery_percent(mv));
             oled_text(0, 54, "MIC", 1);
             oled_bar(22, 53, 106, 10, peak, 8000);
             oled_flush();

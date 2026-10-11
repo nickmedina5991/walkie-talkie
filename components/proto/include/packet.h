@@ -9,7 +9,10 @@
 //   bytes 11-14 send timestamp (microseconds, sender's clock)
 //   bytes 15..  payload, AES-CCM encrypted
 //   last 8      AES-CCM authentication tag
-// An audio packet is 15 + 164 + 8 = 187 bytes, under the 250 byte ESP-NOW limit.
+// Audio comes in two forms, chosen by radio mode:
+//   normal mode:     raw 16 bit PCM, 15 + 640 + 8 = 663 bytes (needs ESP-NOW v2, ESP-IDF 5.4+)
+//   Long Range mode: IMA ADPCM,      15 + 164 + 8 = 187 bytes (raw audio needs 256 kbps,
+//                    more than LR's 250 kbps, so LR must compress)
 #pragma once
 
 #include <stdbool.h>
@@ -23,14 +26,16 @@ extern "C" {
 #define PKT_VERSION      1
 #define PKT_HDR_BYTES    15
 #define PKT_TAG_BYTES    8
-#define PKT_MAX_BYTES    250
+#define PKT_MAX_BYTES    1470  // ESP-NOW v2 limit
+#define PKT_MAX_BYTES_V1 250   // ESP-NOW v1 limit, still what LR mode packets stay under
 #define PKT_MAX_PAYLOAD  (PKT_MAX_BYTES - PKT_HDR_BYTES - PKT_TAG_BYTES)
 #define PKT_NONCE_BYTES  12
 
 typedef enum {
-    PKT_TYPE_AUDIO = 0,
+    PKT_TYPE_AUDIO = 0,      // IMA ADPCM audio (Long Range mode)
     PKT_TYPE_BEACON = 1,
-    PKT_TYPE_TEST = 2,  // radio range test, not encrypted
+    PKT_TYPE_TEST = 2,       // radio range test, not encrypted
+    PKT_TYPE_AUDIO_PCM = 3,  // raw 16 bit PCM audio (normal mode)
 } pkt_type_t;
 
 #define PKT_FLAG_EOT     0x01  // last audio frame of a talk burst

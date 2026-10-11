@@ -14,7 +14,7 @@ extern "C" {
 #endif
 
 #define JB_SLOTS       8
-#define JB_MAX_PAYLOAD 164
+#define JB_MAX_PAYLOAD 640  // a raw PCM frame: 320 samples x 2 bytes (ADPCM frames are 164)
 
 typedef enum {
     JB_IDLE = 0,  // nothing playing (prefilling or no talker)

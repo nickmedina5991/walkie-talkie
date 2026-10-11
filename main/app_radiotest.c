@@ -118,15 +118,15 @@ void app_radiotest(void)
                (unsigned long)s_tx_ok, (unsigned long)s_tx_err, (unsigned long)link_rx_dropped());
         if (oled_ok) {
             oled_clear();
-            oled_printf(0, 0, 1, "RANGE TEST  TX %s", link_long_range() ? "LR" : "NRM");
+            oled_title("RANGE TEST", link_long_range() ? "TX LR" : "TX NRM");
             if (rx == 0) {
-                oled_text(0, 20, "NO SIGNAL", 2);
+                oled_text(0, 24, "NO SIGNAL", 2);
             } else {
-                oled_printf(0, 14, 2, "%d%% LOSS", loss_pct);
-                oled_printf(0, 34, 1, "RX %lu/s  RSSI %d", (unsigned long)rx, avg);
-                oled_bar(0, 46, 128, 10, avg + 100, 70);  // -100 dBm empty, -30 dBm full
+                oled_printf(0, 18, 2, "%d%% LOSS", loss_pct);
+                oled_printf(0, 35, 1, "RX %lu/s  RSSI %d", (unsigned long)rx, avg);
+                oled_bar(0, 45, 128, 8, avg + 100, 70);  // -100 dBm empty, -30 dBm full
             }
-            oled_printf(0, 57, 1, "PTT: toggle LR");
+            oled_text(0, 56, "PTT: toggle LR", 1);
             oled_flush();
         }
     }

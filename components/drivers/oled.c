@@ -145,14 +145,33 @@ static void draw_char(int x, int y, char c, int scale)
     }
 }
 
+int oled_text_width(const char *s, int scale)
+{
+    if (scale < 1) scale = 1;
+    int n = (int)strlen(s);
+    return n ? n * (FONT_W + 1) * scale - scale : 0;  // no gap after the last character
+}
+
 int oled_text(int x, int y, const char *s, int scale)
 {
     if (scale < 1) scale = 1;
+    // Catch layout mistakes during development: warn once if any text runs off the screen.
+    static bool warned;
+    if (!warned && (x + oled_text_width(s, scale) > OLED_W || y + FONT_H * scale > OLED_H)) {
+        warned = true;
+        ESP_LOGW(TAG, "text off screen at (%d,%d) scale %d: \"%s\"", x, y, scale, s);
+    }
     for (; *s; s++) {
         draw_char(x, y, *s, scale);
         x += (FONT_W + 1) * scale;
     }
     return x;
+}
+
+void oled_title(const char *left, const char *right)
+{
+    if (left) oled_text(0, OLED_TITLE_Y, left, 1);
+    if (right) oled_text(OLED_W - oled_text_width(right, 1), OLED_TITLE_Y, right, 1);
 }
 
 int oled_printf(int x, int y, int scale, const char *fmt, ...)

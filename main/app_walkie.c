@@ -56,7 +56,7 @@ typedef struct {
 } frame_t;
 
 typedef struct {
-    uint8_t len;
+    uint16_t len;
     uint8_t data[PKT_MAX_BYTES];
 } tx_pkt_t;
 
@@ -273,10 +273,13 @@ static void encode_task(void *arg)
         xQueueReceive(s_cap_q, &f, portMAX_DELAY);
         DBG_HI(PIN_DBG_ENCODE);
         int64_t t0 = esp_timer_get_time();
+        // Normal mode sends raw PCM (best quality). Long Range mode is limited to 250 kbps,
+        // less than raw audio needs, so it sends 4:1 compressed ADPCM instead.
+        bool raw = !g_settings.long_range;
         tx_pkt_t p;
         pkt_hdr_t h = {
             .version = PKT_VERSION,
-            .type = PKT_TYPE_AUDIO,
+            .type = raw ? PKT_TYPE_AUDIO_PCM : PKT_TYPE_AUDIO,
             .flags = (uint8_t)((f->eot ? PKT_FLAG_EOT : 0) | (g_settings.long_range ? PKT_FLAG_LR : 0)),
             .channel = g_settings.channel,
             .ttl = 0,
@@ -285,13 +288,19 @@ static void encode_task(void *arg)
             .timestamp_us = (uint32_t)t0,
         };
         pkt_write_hdr(&h, p.data);
-        size_t n = adpcm_encode_frame(&st, f->pcm, AUDIO_FRAME_SAMPLES, p.data + PKT_HDR_BYTES);
+        size_t n;
+        if (raw) {
+            memcpy(p.data + PKT_HDR_BYTES, f->pcm, sizeof(f->pcm));  // ESP32 is little endian, same as the wire
+            n = sizeof(f->pcm);
+        } else {
+            n = adpcm_encode_frame(&st, f->pcm, AUDIO_FRAME_SAMPLES, p.data + PKT_HDR_BYTES);
+        }
         xQueueSend(s_free_q, &f, 0);  // give the PCM buffer back as soon as possible
         int len = crypto_seal(p.data, n);
         uint32_t us = (uint32_t)(esp_timer_get_time() - t0);
         if (us > g_stats.encode_us_max) g_stats.encode_us_max = us;
         if (len > 0) {
-            p.len = (uint8_t)len;
+            p.len = (uint16_t)len;
             g_stats.tx_frames++;
             if (xQueueSend(s_tx_q, &p, 0) != pdTRUE) g_stats.tx_queue_full++;
         }
@@ -324,8 +333,11 @@ static void playback_task(void *arg)
 
         if (r == JB_OK) {
             int64_t t0 = esp_timer_get_time();
-            if (adpcm_decode_frame(frame, len, out, AUDIO_FRAME_SAMPLES) != AUDIO_FRAME_SAMPLES)
+            if (len == sizeof(out)) {
+                memcpy(out, frame, sizeof(out));  // raw PCM frame
+            } else if (adpcm_decode_frame(frame, len, out, AUDIO_FRAME_SAMPLES) != AUDIO_FRAME_SAMPLES) {
                 memset(out, 0, sizeof(out));
+            }
             uint32_t us = (uint32_t)(esp_timer_get_time() - t0);
             if (us > g_stats.decode_us_max) g_stats.decode_us_max = us;
             memcpy(last, out, sizeof(out));
@@ -440,7 +452,7 @@ static void handle_audio(const pkt_hdr_t *h, const uint8_t *payload, size_t plen
 static void radio_rx_task(void *arg)
 {
     esp_task_wdt_add(NULL);
-    uint8_t msg[LINK_RX_MSG_MAX];
+    static uint8_t msg[LINK_RX_MSG_MAX];
     for (;;) {
         size_t n = xMessageBufferReceive(s_rx_mb, msg, sizeof(msg), pdMS_TO_TICKS(1000));
         esp_task_wdt_reset();
@@ -478,7 +490,7 @@ static void radio_rx_task(void *arg)
             beacon_t b;
             if (beacon_read(pkt + PKT_HDR_BYTES, plen, &b) == 0) roster_heard(h.sender, rssi, lr, &b, now);
             g_stats.rx_beacons++;
-        } else if (h.type == PKT_TYPE_AUDIO) {
+        } else if (h.type == PKT_TYPE_AUDIO || h.type == PKT_TYPE_AUDIO_PCM) {
             roster_heard(h.sender, rssi, lr, NULL, now);
             g_stats.rx_audio++;
             handle_audio(&h, pkt + PKT_HDR_BYTES, plen, now);
@@ -508,7 +520,7 @@ static void send_beacon(void)
     beacon_write(&b, p.data + PKT_HDR_BYTES);
     int len = crypto_seal(p.data, BEACON_BYTES);
     if (len > 0) {
-        p.len = (uint8_t)len;
+        p.len = (uint16_t)len;
         if (xQueueSend(s_tx_q, &p, 0) == pdTRUE) g_stats.beacons_sent++;
     }
 }
@@ -716,8 +728,8 @@ void app_walkie(void)
     start_task(capture_task, "audio_capture", 4096, PRIO_CAPTURE, CORE_AUDIO);
     start_task(encode_task, "audio_encode", 6144, PRIO_ENCODE, CORE_AUDIO);
     start_task(radio_rx_task, "radio_rx", 6144, PRIO_RADIO_RX, CORE_NET);
-    start_task(radio_tx_task, "radio_tx", 4096, PRIO_RADIO_TX, CORE_NET);
-    start_task(link_mgr_task, "link_mgr", 4096, PRIO_LINK_MGR, CORE_NET);
+    start_task(radio_tx_task, "radio_tx", 6144, PRIO_RADIO_TX, CORE_NET);
+    start_task(link_mgr_task, "link_mgr", 6144, PRIO_LINK_MGR, CORE_NET);
     start_task(monitor_task, "monitor", 4096, PRIO_MONITOR, CORE_NET);
 
     TimerHandle_t beacon = xTimerCreate("beacon", pdMS_TO_TICKS(500), pdTRUE, NULL, beacon_timer_cb);

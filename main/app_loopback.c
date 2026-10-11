@@ -3,7 +3,8 @@
 //                 so the speaker does not feed back into the mic)
 //   playback task: queue -> drop some frames on purpose -> decode or conceal -> speaker
 // Turn the encoder for volume. Press it to cycle simulated packet loss 0/5/10/20/30%
-// and hear what the concealment sounds like. Encode/decode times print every second.
+// and hear what the concealment sounds like. Long press toggles a codec bypass
+// (raw mic to speaker) to compare against ADPCM. Encode/decode times print every second.
 #include <stdio.h>
 #include <string.h>
 
@@ -24,12 +25,17 @@
 static const char *TAG = "loopback";
 
 typedef struct {
-    uint8_t data[ADPCM_FRAME_BYTES];
+    bool raw;  // true: pcm holds raw mic samples (codec bypassed)
+    union {
+        uint8_t data[ADPCM_FRAME_BYTES];
+        int16_t pcm[AUDIO_FRAME_SAMPLES];
+    };
 } enc_frame_t;
 
 static QueueHandle_t s_q;
 static volatile int s_volume = 5;  // 0..10
 static volatile int s_loss_pct;
+static volatile bool s_bypass;  // long press: skip the codec to compare raw vs ADPCM
 static volatile int s_peak;
 static volatile uint32_t s_enc_us, s_dec_us, s_frames, s_dropped, s_concealed, s_q_full;
 
@@ -50,9 +56,14 @@ static void capture_task(void *arg)
         s_peak = p > s_peak ? p : (s_peak * 7) / 8;
         if (input_ptt_held()) {
             enc_frame_t f;
-            int64_t t0 = esp_timer_get_time();
-            adpcm_encode_frame(&st, pcm, AUDIO_FRAME_SAMPLES, f.data);
-            s_enc_us = (uint32_t)(esp_timer_get_time() - t0);
+            f.raw = s_bypass;
+            if (f.raw) {
+                memcpy(f.pcm, pcm, sizeof(f.pcm));
+            } else {
+                int64_t t0 = esp_timer_get_time();
+                adpcm_encode_frame(&st, pcm, AUDIO_FRAME_SAMPLES, f.data);
+                s_enc_us = (uint32_t)(esp_timer_get_time() - t0);
+            }
             if (xQueueSend(s_q, &f, 0) != pdTRUE) s_q_full++;
         }
         DBG_LO(PIN_DBG_CAPTURE);
@@ -83,9 +94,13 @@ static void playback_task(void *arg)
                 } else {
                     memset(out, 0, sizeof(out));
                 }
+            } else if (f.raw) {
+                memcpy(out, f.pcm, sizeof(out));
+                memcpy(last, out, sizeof(out));
+                conceal = 0;
             } else {
                 int64_t t0 = esp_timer_get_time();
-                adpcm_decode_frame(f.data, sizeof(f.data), out, AUDIO_FRAME_SAMPLES);
+                adpcm_decode_frame(f.data, ADPCM_FRAME_BYTES, out, AUDIO_FRAME_SAMPLES);
                 s_dec_us = (uint32_t)(esp_timer_get_time() - t0);
                 memcpy(last, out, sizeof(out));
                 conceal = 0;
@@ -121,6 +136,9 @@ void app_loopback(void)
                 loss_idx = (loss_idx + 1) % 5;
                 s_loss_pct = loss_steps[loss_idx];
                 ESP_LOGI(TAG, "simulated loss %d%%", s_loss_pct);
+            } else if (ev == INPUT_ENC_LONG) {
+                s_bypass = !s_bypass;
+                ESP_LOGI(TAG, "%s", s_bypass ? "codec BYPASSED: raw mic to speaker" : "codec ON: mic -> ADPCM -> speaker");
             }
         }
         int d = input_encoder_delta();
@@ -130,10 +148,10 @@ void app_loopback(void)
         }
         if (oled_ok) {
             oled_clear();
-            oled_text(0, 0, "LOOPBACK", 1);
-            oled_text(0, 12, input_ptt_held() ? "TALKING" : "Hold PTT to talk", 1);
-            oled_printf(0, 24, 1, "VOL %d  LOSS %d%%", s_volume, s_loss_pct);
-            oled_printf(0, 34, 1, "ENC %luus DEC %luus", (unsigned long)s_enc_us, (unsigned long)s_dec_us);
+            oled_title("LOOPBACK", s_bypass ? "RAW" : "ADPCM");
+            oled_text(0, 19, input_ptt_held() ? "TALKING" : "Hold PTT to talk", 1);
+            oled_printf(0, 29, 1, "VOL %d  LOSS %d%%", s_volume, s_loss_pct);
+            oled_printf(0, 39, 1, "ENC %luus DEC %luus", (unsigned long)s_enc_us, (unsigned long)s_dec_us);
             oled_text(0, 54, "MIC", 1);
             oled_bar(22, 53, 106, 10, s_peak, 8000);
             oled_flush();

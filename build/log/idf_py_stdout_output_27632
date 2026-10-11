@@ -1,0 +1,97 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x3 (DOWNLO�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 271414342, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6280
+load:0x40078000,len:15736
+load:0x40080400,len:4
+load:0x40080404,len:3920
+entry 0x40080648
+[0;32mI (30) boot: ESP-IDF v5.4.4 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Oct 10 2026 13:07:48[0m
+[0;32mI (30) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 8MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0d59ch ( 54684) map[0m
+[0;32mI (108) esp_image: segment 1: paddr=0001d5c4 vaddr=3ffb0000 size=0286ch ( 10348) load[0m
+[0;32mI (112) esp_image: segment 2: paddr=0001fe38 vaddr=40080000 size=001e0h (   480) load[0m
+[0;32mI (112) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1d3ech (119788) map[0m
+[0;32mI (160) esp_image: segment 4: paddr=0003d414 vaddr=400801e0 size=0dd40h ( 56640) load[0m
+[0;32mI (182) esp_image: segment 5: paddr=0004b15c vaddr=50000000 size=0001ch (    28) load[0m
+[0;32mI (189) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (189) boot: Disabling RNG early entropy source...[0m
+[0;32mI (200) cpu_start: Multicore app[0m
+[0;32mI (208) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (208) cpu_start: Pro cpu start user code[0m
+[0;32mI (209) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (210) app_init: Application information:[0m
+[0;32mI (214) app_init: Project name:     walkie_talkie[0m
+[0;32mI (219) app_init: App version:      1[0m
+[0;32mI (222) app_init: Compile time:     Oct 10 2026 13:07:12[0m
+[0;32mI (227) app_init: ELF file SHA256:  8ae165709...[0m
+[0;32mI (231) app_init: ESP-IDF:          v5.4.4[0m
+[0;32mI (235) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (239) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (243) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (247) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (253) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (258) heap_init: At 3FFB4138 len 0002BEC8 (175 KiB): DRAM[0m
+[0;32mI (264) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (269) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (274) heap_init: At 4008DF20 len 000120E0 (72 KiB): IRAM[0m
+[0;32mI (281) spi_flash: detected chip: generic[0m
+[0;32mI (283) spi_flash: flash io: dio[0m
+[0;32mI (287) main_task: Started on CPU0[0m
+[0;32mI (289) main_task: Calling app_main()[0m
+[0;32mI (303) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (304) gpio: GPIO[13]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (311) gpio: GPIO[7]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (320) gpio: GPIO[14]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (328) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (336) main: mode: hardware test[0m
+[0;33mW (341) oled: no OLED answered at 0x3C (try 0x3C or 0x3D, check SDA/SCL and power)[0m
+[0;32mI (347) gpio: GPIO[4]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (355) gpio: GPIO[21]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (364) input: PTT on GPIO4, encoder A/B/SW on GPIO5/19/21[0m
+[0;32mI (370) gpio: GPIO[8]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (377) audio: I2S ready: mic on I2S0, amp on I2S1, 16000 Hz, 320 sample frames[0m
+[0;32mI (384) hwtest: OLED: NOT FOUND[0m
+[0;32mI (386) hwtest: Turn the encoder, press it, hold PTT, talk into the mic.[0m
+enc=0 sw=0 ptt=0 presses=0 mic_peak=0 bat=4184mV (98%)
+enc=0 sw=0 ptt=0 presses=0 mic_peak=0 bat=4180mV (98%)
+enc=0 sw=0 ptt=0 presses=0 mic_peak=0 bat=4178mV (97%)
+enc=0 sw=0 ptt=0 presses=0 mic_peak=0 bat=4180mV (98%)
+enc=0 sw=0 ptt=0 presses=0 mic_peak=0 bat=4178mV (97%)
+enc=0 sw=0 ptt=0 presses=0 mic_peak=0 bat=4180mV (98%)
+enc=0 sw=0 ptt=0 presses=0 mic_peak=0 bat=4178mV (97%)
+enc=0 sw=0 ptt=0 presses=0 mic_peak=0 bat=4178mV (97%)
+enc=0 sw=0 ptt=0 presses=0 mic_peak=0 bat=4178mV (97%)
+enc=0 sw=0 ptt=0 presses=0 mic_peak=0 bat=4176mV (97%)
+enc=0 sw=0 ptt=0 presses=0 mic_peak=0 bat=4176mV (97%)
+enc=0 sw=0 ptt=0 presses=0 mic_peak=0 bat=4178mV (97%)
+enc=0 sw=0 ptt=0 presses=0 mic_peak=0 bat=4176mV (97%)
+enc=0 sw=0 ptt=0 presses=0 mic_peak=0 bat=4176mV (97%)
+enc=0 sw=0 ptt=0 presses=0 mic_peak=0 bat=4178mV (97%)
+enc=0 sw=0 ptt=0 presses=0 mic_peak=0 bat=4178mV (97%)
+enc=0 sw=0 ptt=0 presses=0 mic_peak=0 bat=4178mV (97%)
+enc=0 sw=0 ptt=0 presses=0 mic_peak=0 bat=4176mV (97%)
+enc=0 sw=0 ptt=0 presses=0 mic_peak=0 bat=4178mV (97%)
+enc=0 sw=0 ptt=0 presses=0 mic_peak=0 bat=4178mV (97%)
+enc=0 sw=0 ptt=0 presses=0 mic_peak=0 bat=4176mV (97%)
+enc=0 sw=0 ptt=0 presses=0 mic_peak=0 bat=4178mV (97%)
+enc=0 sw=0 ptt=0 presses=0 mic_peak=0 bat=4176mV (97%)
+enc=0 sw=0 ptt=0 presses=0 mic_peak=0 bat=4176mV (97%)
+enc=0 sw=0 ptt=0 presses=0 mic_peak=0 bat=4178mV (97%)

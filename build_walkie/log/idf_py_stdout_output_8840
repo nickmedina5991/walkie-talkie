@@ -1,0 +1,713 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x3 (DOWNLOA�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 271414342, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6280
+load:0x40078000,len:15736
+load:0x40080400,len:4
+load:0x40080404,len:3920
+entry 0x40080648
+[0;32mI (30) boot: ESP-IDF v5.4.4 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Oct 11 2026 02:18:11[0m
+[0;32mI (30) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (38) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (42) boot.esp32: SPI Flash Size : 8MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (50) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (59) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1b774h (112500) map[0m
+[0;32mI (127) esp_image: segment 1: paddr=0002b79c vaddr=3ffb0000 size=04378h ( 17272) load[0m
+[0;32mI (134) esp_image: segment 2: paddr=0002fb1c vaddr=40080000 size=004fch (  1276) load[0m
+[0;32mI (135) esp_image: segment 3: paddr=00030020 vaddr=400d0020 size=88a88h (559752) map[0m
+[0;32mI (330) esp_image: segment 4: paddr=000b8ab0 vaddr=400804fc size=1866ch ( 99948) load[0m
+[0;32mI (369) esp_image: segment 5: paddr=000d1124 vaddr=50000000 size=0001ch (    28) load[0m
+[0;32mI (381) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (381) boot: Disabling RNG early entropy source...[0m
+[0;32mI (392) cpu_start: Multicore app[0m
+[0;32mI (400) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (400) cpu_start: Pro cpu start user code[0m
+[0;32mI (400) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (402) app_init: Application information:[0m
+[0;32mI (406) app_init: Project name:     walkie_talkie[0m
+[0;32mI (410) app_init: App version:      a8d2dee-dirty[0m
+[0;32mI (415) app_init: Compile time:     Oct 11 2026 02:17:34[0m
+[0;32mI (420) app_init: ELF file SHA256:  9e2c3ce6a...[0m
+[0;32mI (424) app_init: ESP-IDF:          v5.4.4[0m
+[0;32mI (428) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (432) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (436) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (440) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (446) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (451) heap_init: At 3FFBD418 len 00022BE8 (138 KiB): DRAM[0m
+[0;32mI (456) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (462) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (467) heap_init: At 40098B68 len 00007498 (29 KiB): IRAM[0m
+[0;32mI (474) spi_flash: detected chip: generic[0m
+[0;32mI (476) spi_flash: flash io: dio[0m
+[0;32mI (480) main_task: Started on CPU0[0m
+[0;32mI (483) main_task: Calling app_main()[0m
+[0;32mI (496) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (496) gpio: GPIO[13]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (502) gpio: GPIO[7]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (510) gpio: GPIO[14]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (518) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (527) main: mode: walkie talkie[0m
+[0;32mI (533) gpio: GPIO[8]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (538) audio: I2S ready: mic on I2S0, amp on I2S1, 16000 Hz, 320 sample frames[0m
+[0;32mI (548) wifi:wifi driver task: 3ffcbe70, prio:23, stack:6656, core=0[0m
+[0;32mI (555) wifi:wifi firmware version: 8896d66[0m
+[0;32mI (555) wifi:wifi certification version: v7.0[0m
+[0;32mI (559) wifi:config NVS flash: enabled[0m
+[0;32mI (563) wifi:config nano formatting: disabled[0m
+[0;32mI (567) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (572) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (576) wifi:Init management short buffer num: 32[0m
+[0;32mI (580) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (584) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (588) wifi:Init static rx buffer num: 10[0m
+[0;32mI (592) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (597) wifi_init: rx ba win: 6[0m
+[0;32mI (599) wifi_init: accept mbox: 6[0m
+[0;32mI (602) wifi_init: tcpip mbox: 32[0m
+[0;32mI (605) wifi_init: udp mbox: 6[0m
+[0;32mI (608) wifi_init: tcp mbox: 6[0m
+[0;32mI (610) wifi_init: tcp tx win: 5760[0m
+[0;32mI (614) wifi_init: tcp rx win: 5760[0m
+[0;32mI (617) wifi_init: tcp mss: 1440[0m
+[0;32mI (620) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (623) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (628) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;33mW (633) phy_init: failed to load RF calibration data (0xffffffff), falling back to full calibration[0m
+[0;32mI (705) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(2)[0m
+[0;32mI (719) wifi:mode : sta (8c:94:df:33:9a:34)[0m
+[0;32mI (720) wifi:enable tsf[0m
+[0;32mI (723) wifi:ifx:0, phymode(new:3, sta nvs: 3 ap nvs: 3)[0m
+[0;32mI (724) wifi:enable tsf[0m
+[0;32mI (726) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (727) ESPNOW: espnow [version: 2.0] init[0m
+[0;32mI (730) link: ESP-NOW version 2 (v2 is needed for raw audio packets over 250 bytes)[0m
+[0;32mI (737) link: ESP-NOW up on Wi-Fi channel 1, my id DF339A34 (MAC 8c:94:df:33:9a:34)[0m
+[0;32mI (745) link: TX rate: normal 1 Mbps[0m
+[0;32mI (748) link: TX rate: normal 1 Mbps[0m
+[0;32mI (752) walkie: sequence numbers start at 0[0m
+[0;32mI (755) crypto: AES-128-CCM ready, channel 1[0m
+[0;32mI (761) gpio: GPIO[4]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (767) gpio: GPIO[21]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (776) input: PTT on GPIO4, encoder A/B/SW on GPIO5/19/21[0m
+[0;32mI (807) oled: SSD1306 ready at 0x3C[0m
+[0;32mI (809) walkie: ready: U9A34 on channel 1 (normal)[0m
+[0;32mI (809) main_task: Returned from app_main()[0m
+[] ch1 NRM | tx 0 pkts 1 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 0us dec 0us | rssi 0 | bat 4306mV
+[] ch1 NRM | tx 0 pkts 1 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 0us dec 0us | rssi 0 | bat 4306mV
+[] ch1 NRM | tx 0 pkts 2 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 0us dec 0us | rssi 0 | bat 4306mV
+[] ch1 NRM | tx 0 pkts 2 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 0us dec 0us | rssi 0 | bat 4306mV
+[] ch1 NRM | tx 0 pkts 3 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 0us dec 0us | rssi 0 | bat 4306mV
+[] ch1 NRM | tx 0 pkts 3 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 0us dec 0us | rssi 0 | bat 4302mV
+[] ch1 NRM | tx 0 pkts 4 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 0us dec 0us | rssi 0 | bat 4302mV
+[] ch1 NRM | tx 0 pkts 4 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 0us dec 0us | rssi 0 | bat 4302mV
+[] ch1 NRM | tx 0 pkts 5 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 0us dec 0us | rssi 0 | bat 4302mV
+[] ch1 NRM | tx 0 pkts 5 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 0us dec 0us | rssi 0 | bat 4302mV
+--- CPU time per task ---
+monitor        	21091		<1%
+IDLE1          	10138586		98%
+IDLE0          	9820490		95%
+link_mgr       	4055		<1%
+display        	131451		1%
+Tmr Svc        	3782		<1%
+tiT            	3808		<1%
+radio_rx       	406		<1%
+audio_playback 	35561		<1%
+audio_capture  	109743		1%
+ui             	4033		<1%
+ipc1           	23120		<1%
+ipc0           	8008		<1%
+audio_encode   	54		<1%
+radio_tx       	2059		<1%
+wifi           	147588		1%
+esp_timer      	719		<1%
+sys_evt        	130		<1%
+--- free stack (bytes) ---
+audio_playback 2908
+audio_capture  2740
+audio_encode   4092
+radio_rx       5524
+radio_tx       3820
+link_mgr       3876
+monitor        2188
+[] ch1 NRM | tx 0 pkts 6 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 0us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 0 pkts 7 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 0us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 0 pkts 7 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 0us dec 0us | rssi 0 | bat 4304mV
+[TX] ch1 NRM | tx 39 pkts 46 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[TX] ch1 NRM | tx 90 pkts 97 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[TX] ch1 NRM | tx 140 pkts 147 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4306mV
+[] ch1 NRM | tx 175 pkts 182 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4306mV
+[] ch1 NRM | tx 175 pkts 183 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4306mV
+[TX] ch1 NRM | tx 181 pkts 189 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4306mV
+[TX] ch1 NRM | tx 231 pkts 239 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4306mV
+--- CPU time per task ---
+monitor        	108326		<1%
+IDLE1          	19892127		97%
+IDLE0          	19542704		95%
+ui             	8913		<1%
+display        	276717		1%
+link_mgr       	7581		<1%
+tiT            	5988		<1%
+radio_rx       	694		<1%
+audio_playback 	71252		<1%
+audio_capture  	222313		1%
+Tmr Svc        	8272		<1%
+ipc0           	8008		<1%
+audio_encode   	183186		<1%
+radio_tx       	35434		<1%
+wifi           	208969		1%
+esp_timer      	19950		<1%
+sys_evt        	130		<1%
+ipc1           	23120		<1%
+--- free stack (bytes) ---
+audio_playback 2908
+audio_capture  2740
+audio_encode   3740
+radio_rx       5524
+radio_tx       3724
+link_mgr       3876
+monitor        2188
+[] ch1 NRM | tx 239 pkts 247 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4300mV
+[TX] ch1 NRM | tx 256 pkts 264 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4300mV
+[] ch1 NRM | tx 297 pkts 305 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4300mV
+[TX] ch1 NRM | tx 327 pkts 336 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4300mV
+[TX] ch1 NRM | tx 376 pkts 385 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4300mV
+[TX] ch1 NRM | tx 426 pkts 435 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 465 pkts 474 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[TX] ch1 NRM | tx 513 pkts 522 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 559 pkts 568 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 559 pkts 569 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+--- CPU time per task ---
+monitor        	197778		<1%
+IDLE1          	29571917		97%
+IDLE0          	29214728		95%
+ui             	15013		<1%
+display        	427973		1%
+link_mgr       	10894		<1%
+tiT            	8339		<1%
+radio_rx       	986		<1%
+audio_playback 	107175		<1%
+audio_capture  	336213		1%
+Tmr Svc        	13515		<1%
+sys_evt        	130		<1%
+audio_encode   	442529		1%
+radio_tx       	82140		<1%
+wifi           	294327		<1%
+esp_timer      	46899		<1%
+ipc1           	23120		<1%
+ipc0           	8008		<1%
+--- free stack (bytes) ---
+audio_playback 2908
+audio_capture  2740
+audio_encode   3740
+radio_rx       5524
+radio_tx       3724
+link_mgr       3876
+monitor        2188
+[] ch1 NRM | tx 559 pkts 569 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 559 pkts 570 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 559 pkts 570 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 559 pkts 571 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 559 pkts 571 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 559 pkts 572 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4298mV
+[] ch1 NRM | tx 559 pkts 572 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4298mV
+[] ch1 NRM | tx 559 pkts 573 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4298mV
+[] ch1 NRM | tx 559 pkts 573 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4298mV
+[] ch1 NRM | tx 559 pkts 574 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4298mV
+--- CPU time per task ---
+monitor        	287938		<1%
+IDLE1          	39511293		97%
+IDLE0          	39066938		96%
+ui             	20588		<1%
+link_mgr       	14752		<1%
+display        	548729		1%
+tiT            	10278		<1%
+radio_rx       	1233		<1%
+audio_playback 	142523		<1%
+audio_capture  	445746		1%
+Tmr Svc        	17656		<1%
+audio_encode   	442529		1%
+ipc1           	23751		<1%
+radio_tx       	83932		<1%
+esp_timer      	47480		<1%
+wifi           	298180		<1%
+ipc0           	8008		<1%
+sys_evt        	130		<1%
+--- free stack (bytes) ---
+audio_playback 2908
+audio_capture  2740
+audio_encode   3740
+radio_rx       5524
+radio_tx       3724
+link_mgr       3876
+monitor        2060
+[] ch1 NRM | tx 559 pkts 574 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4298mV
+[] ch1 NRM | tx 559 pkts 575 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4298mV
+[] ch1 NRM | tx 559 pkts 575 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4298mV
+[] ch1 NRM | tx 559 pkts 576 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4298mV
+[] ch1 NRM | tx 559 pkts 576 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4298mV
+[] ch1 NRM | tx 559 pkts 577 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4302mV
+[] ch1 NRM | tx 559 pkts 577 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4302mV
+[] ch1 NRM | tx 559 pkts 578 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4302mV
+[] ch1 NRM | tx 559 pkts 579 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4302mV
+[] ch1 NRM | tx 559 pkts 579 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4302mV
+--- CPU time per task ---
+monitor        	381495		<1%
+IDLE1          	49451483		97%
+IDLE0          	48937157		96%
+ui             	24391		<1%
+link_mgr       	18539		<1%
+display        	654056		1%
+tiT            	12077		<1%
+radio_rx       	1469		<1%
+audio_playback 	177813		<1%
+audio_capture  	555156		1%
+Tmr Svc        	21917		<1%
+ipc1           	23751		<1%
+ipc0           	8008		<1%
+radio_tx       	85501		<1%
+wifi           	301780		<1%
+esp_timer      	48030		<1%
+sys_evt        	130		<1%
+audio_encode   	442529		<1%
+--- free stack (bytes) ---
+audio_playback 2908
+audio_capture  2740
+audio_encode   3740
+radio_rx       5524
+radio_tx       3724
+link_mgr       3876
+monitor        2060
+[] ch1 NRM | tx 559 pkts 579 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[0;32mI (52605) link: TX rate: normal 1 Mbps[0m
+[] ch1 NRM | tx 559 pkts 580 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 559 pkts 580 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 559 pkts 581 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 559 pkts 581 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 559 pkts 582 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4302mV
+[0;32mI (58093) walkie: channel 1[0m
+[] ch1 NRM | tx 559 pkts 582 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4302mV
+[] ch1 NRM | tx 559 pkts 583 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4302mV
+[] ch1 NRM | tx 559 pkts 583 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4302mV
+[0;32mI (60728) walkie: channel 1[0m
+[] ch1 NRM | tx 559 pkts 584 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4302mV
+--- CPU time per task ---
+monitor        	472409		<1%
+IDLE1          	59392804		97%
+IDLE0          	58804735		96%
+ui             	32008		<1%
+link_mgr       	22493		<1%
+display        	757804		1%
+tiT            	14016		<1%
+radio_rx       	1701		<1%
+audio_playback 	213123		<1%
+audio_capture  	664789		1%
+Tmr Svc        	26227		<1%
+sys_evt        	130		<1%
+radio_tx       	87202		<1%
+wifi           	305487		<1%
+esp_timer      	48651		<1%
+ipc1           	24382		<1%
+audio_encode   	442529		<1%
+ipc0           	8008		<1%
+--- free stack (bytes) ---
+audio_playback 2908
+audio_capture  2740
+audio_encode   3740
+radio_rx       5524
+radio_tx       3724
+link_mgr       3828
+monitor        2060
+[] ch1 NRM | tx 559 pkts 584 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4302mV
+[] ch1 NRM | tx 559 pkts 585 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4302mV
+[TX] ch1 NRM | tx 575 pkts 601 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4302mV
+[TX] ch1 NRM | tx 615 pkts 641 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4302mV
+[] ch1 NRM | tx 663 pkts 689 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4302mV
+[] ch1 NRM | tx 663 pkts 690 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4306mV
+[] ch1 NRM | tx 663 pkts 691 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4306mV
+[] ch1 NRM | tx 663 pkts 691 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4306mV
+[] ch1 NRM | tx 663 pkts 692 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4306mV
+[] ch1 NRM | tx 663 pkts 692 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4306mV
+--- CPU time per task ---
+monitor        	562188		<1%
+IDLE1          	69251527		97%
+IDLE0          	68596609		96%
+ui             	36804		<1%
+Tmr Svc        	30920		<1%
+link_mgr       	26126		<1%
+tiT            	16070		<1%
+radio_rx       	1974		<1%
+audio_playback 	248939		<1%
+audio_capture  	775875		1%
+display        	891363		1%
+ipc1           	24382		<1%
+audio_encode   	524802		<1%
+radio_tx       	103121		<1%
+esp_timer      	57645		<1%
+wifi           	335189		<1%
+ipc0           	8008		<1%
+sys_evt        	130		<1%
+--- free stack (bytes) ---
+audio_playback 2908
+audio_capture  2740
+audio_encode   3740
+radio_rx       5524
+radio_tx       3724
+link_mgr       3828
+monitor        2060
+[] ch1 NRM | tx 663 pkts 693 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 703 pkts 733 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 736 pkts 767 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[TX] ch1 NRM | tx 749 pkts 780 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[TX] ch1 NRM | tx 763 pkts 794 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[TX] ch1 NRM | tx 813 pkts 844 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4312mV
+[TX] ch1 NRM | tx 863 pkts 894 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4312mV
+[] ch1 NRM | tx 905 pkts 936 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4312mV
+[] ch1 NRM | tx 905 pkts 937 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4312mV
+[] ch1 NRM | tx 905 pkts 937 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4312mV
+--- CPU time per task ---
+monitor        	653602		<1%
+IDLE1          	78999152		97%
+IDLE0          	78311877		96%
+link_mgr       	29637		<1%
+display        	1037612		1%
+Tmr Svc        	36558		<1%
+tiT            	18341		<1%
+radio_rx       	2266		<1%
+audio_capture  	888425		1%
+audio_playback 	285358		<1%
+ui             	42384		<1%
+ipc0           	8008		<1%
+audio_encode   	716150		<1%
+radio_tx       	137860		<1%
+esp_timer      	77696		<1%
+wifi           	399246		<1%
+sys_evt        	130		<1%
+ipc1           	24382		<1%
+--- free stack (bytes) ---
+audio_playback 2908
+audio_capture  2740
+audio_encode   3740
+radio_rx       5524
+radio_tx       3724
+link_mgr       3828
+monitor        2060
+[] ch1 NRM | tx 905 pkts 938 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4306mV
+[] ch1 NRM | tx 905 pkts 938 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4306mV
+[] ch1 NRM | tx 905 pkts 939 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4306mV
+[] ch1 NRM | tx 905 pkts 939 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4306mV
+[] ch1 NRM | tx 905 pkts 940 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4306mV
+[TX] ch1 NRM | tx 914 pkts 949 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4306mV
+[] ch1 NRM | tx 948 pkts 983 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4306mV
+[] ch1 NRM | tx 948 pkts 983 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4306mV
+[] ch1 NRM | tx 948 pkts 984 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4306mV
+[] ch1 NRM | tx 948 pkts 984 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4306mV
+--- CPU time per task ---
+monitor        	744640		<1%
+IDLE1          	88905064		97%
+IDLE0          	88136221		96%
+display        	1166111		1%
+ui             	49058		<1%
+tiT            	20343		<1%
+link_mgr       	33208		<1%
+radio_rx       	2542		<1%
+audio_playback 	320778		<1%
+audio_capture  	998908		1%
+Tmr Svc        	40688		<1%
+sys_evt        	130		<1%
+audio_encode   	750158		<1%
+radio_tx       	145428		<1%
+wifi           	413197		<1%
+ipc1           	25470		<1%
+esp_timer      	81732		<1%
+ipc0           	8008		<1%
+--- free stack (bytes) ---
+audio_playback 2908
+audio_capture  2740
+audio_encode   3740
+radio_rx       5524
+radio_tx       3724
+link_mgr       3828
+monitor        2060
+[] ch1 NRM | tx 948 pkts 985 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 948 pkts 985 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 948 pkts 986 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 948 pkts 986 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 948 pkts 987 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 948 pkts 987 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4296mV
+[] ch1 NRM | tx 948 pkts 988 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4296mV
+[] ch1 NRM | tx 948 pkts 988 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4296mV
+[] ch1 NRM | tx 948 pkts 989 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4296mV
+[] ch1 NRM | tx 948 pkts 989 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4296mV
+--- CPU time per task ---
+monitor        	835533		<1%
+IDLE1          	98846042		97%
+IDLE0          	98007758		96%
+Tmr Svc        	44881		<1%
+display        	1270527		1%
+link_mgr       	37031		<1%
+radio_rx       	2782		<1%
+tiT            	22322		<1%
+audio_playback 	356136		<1%
+audio_capture  	1108432		1%
+ui             	52901		<1%
+audio_encode   	750158		<1%
+ipc1           	25470		<1%
+radio_tx       	147156		<1%
+esp_timer      	82305		<1%
+wifi           	417112		<1%
+ipc0           	8008		<1%
+sys_evt        	130		<1%
+--- free stack (bytes) ---
+audio_playback 2908
+audio_capture  2740
+audio_encode   3740
+radio_rx       5524
+radio_tx       3724
+link_mgr       3828
+monitor        2060
+[] ch1 NRM | tx 948 pkts 990 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 948 pkts 990 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 948 pkts 991 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 948 pkts 991 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[0;32mI (106397) link: TX rate: Long Range 250 kbps[0m
+[] ch1 LR | tx 948 pkts 992 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 LR | tx 948 pkts 992 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4302mV
+[] ch1 LR | tx 948 pkts 993 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4302mV
+[0;32mI (108649) link: TX rate: normal 1 Mbps[0m
+[] ch1 NRM | tx 948 pkts 993 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4302mV
+[] ch1 NRM | tx 948 pkts 994 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4302mV
+[] ch1 NRM | tx 948 pkts 994 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4302mV
+--- CPU time per task ---
+monitor        	926363		<1%
+IDLE1          	108785830		97%
+IDLE0          	107871861		97%
+ui             	62469		<1%
+display        	1375862		1%
+link_mgr       	41003		<1%
+radio_rx       	3013		<1%
+tiT            	24253		<1%
+audio_capture  	1217962		1%
+audio_playback 	391455		<1%
+Tmr Svc        	49180		<1%
+ipc0           	8008		<1%
+ipc1           	27637		<1%
+radio_tx       	148874		<1%
+wifi           	420624		<1%
+esp_timer      	82914		<1%
+sys_evt        	130		<1%
+audio_encode   	750158		<1%
+--- free stack (bytes) ---
+audio_playback 2908
+audio_capture  2740
+audio_encode   3740
+radio_rx       5524
+radio_tx       3724
+link_mgr       3828
+monitor        2060
+[] ch1 NRM | tx 948 pkts 995 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 948 pkts 995 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[0;32mI (114198) walkie: channel 7[0m
+[] ch7 NRM | tx 948 pkts 996 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch7 NRM | tx 948 pkts 996 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch7 NRM | tx 948 pkts 997 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch7 NRM | tx 948 pkts 997 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[0;32mI (118499) walkie: channel 1[0m
+[] ch1 NRM | tx 948 pkts 998 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 948 pkts 998 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 948 pkts 999 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 948 pkts 1000 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+--- CPU time per task ---
+monitor        	1020283		<1%
+IDLE1          	118724523		97%
+IDLE0          	117733188		97%
+link_mgr       	45323		<1%
+Tmr Svc        	53758		<1%
+ui             	73191		<1%
+display        	1480427		1%
+tiT            	26164		<1%
+audio_playback 	426761		<1%
+audio_capture  	1327727		1%
+radio_rx       	3245		<1%
+sys_evt        	130		<1%
+ipc1           	29819		<1%
+radio_tx       	151154		<1%
+wifi           	424887		<1%
+esp_timer      	83690		<1%
+audio_encode   	750158		<1%
+ipc0           	8008		<1%
+--- free stack (bytes) ---
+audio_playback 2908
+audio_capture  2740
+audio_encode   3740
+radio_rx       5524
+radio_tx       3724
+link_mgr       3828
+monitor        2060
+[] ch1 NRM | tx 948 pkts 1000 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[TX] ch1 NRM | tx 979 pkts 1031 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 1000 pkts 1052 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 1000 pkts 1053 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 1000 pkts 1053 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 1000 pkts 1054 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4306mV
+[] ch1 NRM | tx 1000 pkts 1054 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4306mV
+[] ch1 NRM | tx 1000 pkts 1055 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4306mV
+[] ch1 NRM | tx 1000 pkts 1055 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4306mV
+[] ch1 NRM | tx 1000 pkts 1056 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4306mV
+--- CPU time per task ---
+monitor        	1114394		<1%
+IDLE1          	128628440		97%
+IDLE0          	127550554		97%
+ui             	77455		<1%
+link_mgr       	48856		<1%
+display        	1616067		1%
+tiT            	28231		<1%
+radio_rx       	3557		<1%
+audio_playback 	462217		<1%
+audio_capture  	1438129		1%
+Tmr Svc        	57751		<1%
+ipc1           	29819		<1%
+audio_encode   	791288		<1%
+radio_tx       	159960		<1%
+wifi           	441412		<1%
+esp_timer      	88463		<1%
+ipc0           	8008		<1%
+sys_evt        	130		<1%
+--- free stack (bytes) ---
+audio_playback 2908
+audio_capture  2740
+audio_encode   3740
+radio_rx       5524
+radio_tx       3724
+link_mgr       3828
+monitor        2060
+[] ch1 NRM | tx 1000 pkts 1056 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 1000 pkts 1057 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 1000 pkts 1057 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 1000 pkts 1058 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 1000 pkts 1058 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 1000 pkts 1059 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4302mV
+[] ch1 NRM | tx 1000 pkts 1059 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4302mV
+[] ch1 NRM | tx 1000 pkts 1060 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4302mV
+[] ch1 NRM | tx 1000 pkts 1060 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4302mV
+[] ch1 NRM | tx 1000 pkts 1061 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4302mV
+--- CPU time per task ---
+monitor        	1207455		<1%
+IDLE1          	138573096		97%
+IDLE0          	137395045		97%
+ui             	81401		<1%
+link_mgr       	52648		<1%
+display        	1748259		1%
+tiT            	30112		<1%
+radio_rx       	3833		<1%
+audio_playback 	497515		<1%
+audio_capture  	1548057		1%
+Tmr Svc        	61495		<1%
+audio_encode   	791288		<1%
+ipc0           	8008		<1%
+radio_tx       	161679		<1%
+wifi           	445179		<1%
+esp_timer      	89060		<1%
+sys_evt        	130		<1%
+ipc1           	29819		<1%
+--- free stack (bytes) ---
+audio_playback 2908
+audio_capture  2740
+audio_encode   3740
+radio_rx       5524
+radio_tx       3724
+link_mgr       3828
+monitor        2060
+[] ch1 NRM | tx 1000 pkts 1061 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 1000 pkts 1062 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 1000 pkts 1062 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 1000 pkts 1063 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 1000 pkts 1064 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 1000 pkts 1064 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 1000 pkts 1064 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 1000 pkts 1065 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 1000 pkts 1065 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 1000 pkts 1066 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+--- CPU time per task ---
+monitor        	1298696		<1%
+IDLE1          	148517925		98%
+IDLE0          	147240665		97%
+Tmr Svc        	65242		<1%
+ui             	85368		<1%
+link_mgr       	56400		<1%
+tiT            	31993		<1%
+radio_rx       	4109		<1%
+audio_playback 	532844		<1%
+audio_capture  	1657778		1%
+display        	1879693		1%
+ipc0           	8008		<1%
+sys_evt        	130		<1%
+radio_tx       	163404		<1%
+wifi           	448667		<1%
+esp_timer      	89655		<1%
+ipc1           	29819		<1%
+audio_encode   	791288		<1%
+--- free stack (bytes) ---
+audio_playback 2908
+audio_capture  2740
+audio_encode   3740
+radio_rx       5524
+radio_tx       3724
+link_mgr       3828
+monitor        2060
+[] ch1 NRM | tx 1000 pkts 1066 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4306mV
+[] ch1 NRM | tx 1000 pkts 1067 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4306mV
+[] ch1 NRM | tx 1000 pkts 1067 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4306mV
+[] ch1 NRM | tx 1000 pkts 1068 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4306mV
+[] ch1 NRM | tx 1000 pkts 1068 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4306mV
+[] ch1 NRM | tx 1000 pkts 1069 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 1000 pkts 1070 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 1000 pkts 1070 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 1000 pkts 1071 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 1000 pkts 1071 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+--- CPU time per task ---
+monitor        	1391622		<1%
+IDLE1          	158462525		98%
+IDLE0          	157085857		97%
+Tmr Svc        	69000		<1%
+ui             	89267		<1%
+link_mgr       	60206		<1%
+tiT            	33878		<1%
+radio_rx       	4385		<1%
+audio_playback 	568143		<1%
+audio_capture  	1767763		1%
+display        	2011951		1%
+sys_evt        	130		<1%
+ipc1           	29819		<1%
+radio_tx       	165115		<1%
+wifi           	452477		<1%
+esp_timer      	90250		<1%
+audio_encode   	791288		<1%
+ipc0           	8008		<1%
+--- free stack (bytes) ---
+audio_playback 2908
+audio_capture  2740
+audio_encode   3740
+radio_rx       5524
+radio_tx       3724
+link_mgr       3828
+monitor        2060
+[] ch1 NRM | tx 1000 pkts 1072 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 1000 pkts 1072 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 1000 pkts 1073 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV
+[] ch1 NRM | tx 1000 pkts 1073 err 0 qfull 0 ovr 0 | rx 0 audio 0 lost 0 late 0 | under 0 conc 0 | auth 0 replay 0 | enc 1182us dec 0us | rssi 0 | bat 4304mV

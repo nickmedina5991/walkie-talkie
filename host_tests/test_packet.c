@@ -32,8 +32,11 @@ static void test_rejects_short_or_wrong_version(void)
 
 static void test_audio_packet_fits_espnow(void)
 {
-    CHECK_EQ(PKT_HDR_BYTES + 164 + PKT_TAG_BYTES, 187);
-    CHECK(PKT_HDR_BYTES + 164 + PKT_TAG_BYTES <= 250);
+    CHECK_EQ(PKT_HDR_BYTES + 164 + PKT_TAG_BYTES, 187);        // ADPCM (Long Range)
+    CHECK(PKT_HDR_BYTES + 164 + PKT_TAG_BYTES <= PKT_MAX_BYTES_V1);
+    CHECK_EQ(PKT_HDR_BYTES + 640 + PKT_TAG_BYTES, 663);        // raw PCM (normal)
+    CHECK(PKT_HDR_BYTES + 640 + PKT_TAG_BYTES <= PKT_MAX_BYTES);
+    CHECK(640 <= PKT_MAX_PAYLOAD);
 }
 
 static void test_aad_ignores_ttl(void)

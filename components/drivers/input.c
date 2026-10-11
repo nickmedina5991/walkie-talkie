@@ -13,6 +13,7 @@ static const char *TAG = "input";
 #define LONG_PRESS_MS 600
 #define PCNT_LIMIT    10000
 #define COUNTS_PER_DETENT 4  // full quadrature decoding: 4 edges per click
+#define RESYNC_MS     50
 
 typedef struct {
     gpio_num_t pin;
@@ -35,9 +36,9 @@ static void IRAM_ATTR button_isr(void *arg)
     portYIELD_FROM_ISR(woken);
 }
 
-static void debounce_done(TimerHandle_t t)
+// Called from the timer task once a button has been quiet for DEBOUNCE_MS.
+static void button_settle(button_t *b)
 {
-    button_t *b = (button_t *)pvTimerGetTimerID(t);
     bool pressed = gpio_get_level(b->pin) == 0;  // active low
     if (pressed == b->pressed) return;            // bounce that settled back
     b->pressed = pressed;
@@ -53,6 +54,27 @@ static void debounce_done(TimerHandle_t t)
         ev = held_ms >= LONG_PRESS_MS ? INPUT_ENC_LONG : INPUT_ENC_SHORT;
     }
     if (s_queue) xQueueSend(s_queue, &ev, 0);
+}
+
+static void debounce_done(TimerHandle_t t)
+{
+    button_settle((button_t *)pvTimerGetTimerID(t));
+}
+
+// Safety net: every RESYNC_MS, compare each button's pin with its debounced state.
+// If an edge interrupt was missed (electrical noise, or the timer command queue was
+// full while the button bounced), the state is corrected here instead of staying
+// stuck until the next press.
+static void resync_check(TimerHandle_t t)
+{
+    button_t *buttons[] = {&s_ptt, &s_sw};
+    for (int i = 0; i < 2; i++) {
+        button_t *b = buttons[i];
+        bool pressed = gpio_get_level(b->pin) == 0;
+        if (pressed != b->pressed && !xTimerIsTimerActive(b->timer)) {
+            xTimerReset(b->timer, 0);  // let the normal debounce path confirm it
+        }
+    }
 }
 
 static esp_err_t button_init(button_t *b, const char *name)
@@ -112,6 +134,8 @@ esp_err_t input_init(QueueHandle_t event_queue)
     ESP_RETURN_ON_ERROR(button_init(&s_ptt, "ptt_db"), TAG, "ptt");
     ESP_RETURN_ON_ERROR(button_init(&s_sw, "sw_db"), TAG, "enc switch");
     ESP_RETURN_ON_ERROR(encoder_init(), TAG, "encoder");
+    TimerHandle_t resync = xTimerCreate("btn_resync", pdMS_TO_TICKS(RESYNC_MS), pdTRUE, NULL, resync_check);
+    ESP_RETURN_ON_FALSE(resync && xTimerStart(resync, 0) == pdPASS, ESP_ERR_NO_MEM, TAG, "resync timer");
     ESP_LOGI(TAG, "PTT on GPIO%d, encoder A/B/SW on GPIO%d/%d/%d", PIN_PTT, PIN_ENC_A, PIN_ENC_B, PIN_ENC_SW);
     return ESP_OK;
 }

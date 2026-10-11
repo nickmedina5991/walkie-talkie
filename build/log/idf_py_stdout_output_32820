@@ -1,0 +1,43 @@
+[1/23] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/app_hwtest.c.obj
+[2/23] Building C object esp-idf/proto/CMakeFiles/__idf_proto.dir/jbuf.c.obj
+[3/23] Building C object esp-idf/proto/CMakeFiles/__idf_proto.dir/packet.c.obj
+[4/23] Performing build step for 'bootloader'
+[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\nickm\walkie-talkie\build\bootloader\esp-idf\esptool_py && C:\Espressif\tools\python\v5.4.4\venv\Scripts\python.exe C:/esp/v5.4.4/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 C:/Users/nickm/walkie-talkie/build/bootloader/bootloader.bin"
+Bootloader binary size 0x65b0 bytes. 0xa50 bytes (9%) free.
+[5/23] No install step for 'bootloader'
+[6/23] Building C object esp-idf/drivers/CMakeFiles/__idf_drivers.dir/input.c.obj
+[7/23] Linking C static library esp-idf\proto\libproto.a
+[8/23] Building C object esp-idf/drivers/CMakeFiles/__idf_drivers.dir/audio_io.c.obj
+[9/23] Completed 'bootloader'
+[10/23] Building C object esp-idf/link/CMakeFiles/__idf_link.dir/espnow_link.c.obj
+[11/23] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/app_radiotest.c.obj
+[12/23] Building C object esp-idf/link/CMakeFiles/__idf_link.dir/crypto.c.obj
+[13/23] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/app_loopback.c.obj
+[14/23] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/walkie_ui.c.obj
+[15/23] Linking C static library esp-idf\drivers\libdrivers.a
+[16/23] Linking C static library esp-idf\link\liblink.a
+[17/23] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/app_walkie.c.obj
+[18/23] Linking C static library esp-idf\main\libmain.a
+[19/23] Generating ld/sections.ld
+[20/23] Linking CXX executable walkie_talkie.elf
+[21/23] Generating binary image from built executable
+esptool.py v4.12.0
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated C:/Users/nickm/walkie-talkie/build/walkie_talkie.bin
+[22/23] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\nickm\walkie-talkie\build\esp-idf\esptool_py && C:\Espressif\tools\python\v5.4.4\venv\Scripts\python.exe C:/esp/v5.4.4/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/Users/nickm/walkie-talkie/build/partition_table/partition-table.bin C:/Users/nickm/walkie-talkie/build/walkie_talkie.bin"
+walkie_talkie.bin binary size 0x3b9e0 bytes. Smallest app partition is 0x177000 bytes. 0x13b620 bytes (84%) free.
+[22/23] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\esp\v5.4.4\esp-idf\components\esptool_py && C:\Espressif\tools\cmake\3.30.2\bin\cmake.exe -D IDF_PATH=C:/esp/v5.4.4/esp-idf -D SERIAL_TOOL=C:/Espressif/tools/python/v5.4.4/venv/Scripts/python.exe;;C:/esp/v5.4.4/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=C:/Users/nickm/walkie-talkie/build -P C:/esp/v5.4.4/esp-idf/components/esptool_py/run_serial_tool.cmake"
+esptool.py --chip esp32 -p COM21 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 8MB 0x1000 bootloader/bootloader.bin 0x10000 walkie_talkie.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.12.0
+Serial port COM21
+
+A fatal error occurred: Could not open COM21, the port is busy or doesn't exist.
+(could not open port 'COM21': FileNotFoundError(2, 'The system cannot find the file specified.', None, 2))
+
+Hint: Check if the port is correct and ESP connected
+
+FAILED: CMakeFiles/flash C:/Users/nickm/walkie-talkie/build/CMakeFiles/flash 
+C:\WINDOWS\system32\cmd.exe /C "cd /D C:\esp\v5.4.4\esp-idf\components\esptool_py && C:\Espressif\tools\cmake\3.30.2\bin\cmake.exe -D IDF_PATH=C:/esp/v5.4.4/esp-idf -D SERIAL_TOOL=C:/Espressif/tools/python/v5.4.4/venv/Scripts/python.exe;;C:/esp/v5.4.4/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=C:/Users/nickm/walkie-talkie/build -P C:/esp/v5.4.4/esp-idf/components/esptool_py/run_serial_tool.cmake"
+ninja: build stopped: subcommand failed.
